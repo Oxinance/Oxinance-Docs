@@ -8,39 +8,36 @@ import {useRef, useState} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Collapsible from "../Users/Collapsible";
-import UserObject from "../Users/UserObject";
 import GetCurrentUser from "../Users/GetCurrentUser";
-import LoginUser from "../Users/LoginUser";
 import RegisterUser from "../Users/RegisterUser";
-import ProductObject from "./ProductObject";
-import GetProducts from "./GetProducts";
-import GetProduct from "./GetProduct";
+import LoginUser from "../Users/LoginUser";
+import UserObject from "../Users/UserObject";
 
-
-const Products = ({spacing}) => {
+const Orders = ({spacing}) => {
 
     const [expand, setExpand] = useState(false)
-    const getProductsRef = useRef(null);
-    const getProductRef = useRef(null);
+    const getCurrentUserRef = useRef(null);
+    const loginUserRef = useRef(null);
+    const registerUserRef = useRef(null);
 
     const scrollToCurrentUser = () => {
         if (!expand) {
             setExpand(true)
             setTimeout(() => {
-                getProductsRef.current.scrollIntoView()
+                getCurrentUserRef.current.scrollIntoView()
             }, 500)
         }
-        getProductsRef.current.scrollIntoView()
+        getCurrentUserRef.current.scrollIntoView()
     }
 
     const scrollToLoginUser = () => {
         if (!expand) {
             setExpand(true)
             setTimeout(() => {
-                getProductRef.current.scrollIntoView()
+                loginUserRef.current.scrollIntoView()
             }, 500)
         }
-        getProductRef.current.scrollIntoView()
+        loginUserRef.current.scrollIntoView()
     }
 
     const scrollToRegisterUser = () => {
@@ -74,26 +71,31 @@ const Products = ({spacing}) => {
         <>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
-                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Products</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>Oxinance fetches your <TipWord>products</TipWord> from the <TipWord>Stripe</TipWord> account your shop is connected with.</p>
+                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Orders</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Order objects keep track of user purchases inside your Shop. Each order is created after a payment from any platform is succeeded.</p>
                     <br/>
-                    <p style={{fontSize: 14, color: "#4F566B"}}>In order to access this API, your Shop must be connected to a Stripe Account. This can be done through <TipWord title={"Click to visit"}>Oxinance Dashboard</TipWord>.</p>
+                    <p style={{fontSize: 14, color: "#4F566B"}}>An order placed by a non-authenticated customer using the <TipWord title={"An Oxinance API that allows non-authenticated customers to place orders"}>Guest Checkout API</TipWord> will still be visible for you in <TipWord>Oxinance Dashboard</TipWord> but will not be retrievable by the user as he does not have an <TipWord>Authentication Token</TipWord>.
+                        <br/>
+                        <br/>
+                        In this case Oxinance will send an email message to the email address provided by the user during the checkout, the message will contain all order details.</p>
                 </Grid>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all products"} method={"GET"}>/v1/products</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Gets product with specified id"} method={"GET"}>/v1/products/:id</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"GET"}>/v1/orders</Endpoint>
+                        <Endpoint onClick={scrollToLoginUser} title={"Retrieves a specific order"} method={"GET"}>/v1/orders/:id</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>
             <Collapsible open={expand}>
                 <Divider/>
-                <ProductObject spacing={spacing}/>
+                <UserObject spacing={spacing}/>
                 <Divider/>
-                <GetProducts spacing={spacing} ref={getProductsRef}/>
+                <GetCurrentUser spacing={spacing} ref={getCurrentUserRef}/>
                 <Divider/>
-                <GetProduct spacing={spacing} ref={getProductRef}/>
+                <LoginUser spacing={spacing} ref={loginUserRef}/>
+                <Divider/>
+                <RegisterUser spacing={spacing} ref={registerUserRef}/>
             </Collapsible>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", borderBottom: "1px solid #E3E8EE", paddingBottom: 100}} container>
                 <Grid style={{margin: "auto"}} item sx={12}>
@@ -104,4 +106,4 @@ const Products = ({spacing}) => {
     )
 }
 
-export default Products;
+export default Orders;

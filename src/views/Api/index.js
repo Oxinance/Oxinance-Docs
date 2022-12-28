@@ -4,6 +4,8 @@ import PublicKeys from "./sections/PublicKeys";
 import Users from "./sections/Users";
 import {useEffect, useRef, useState} from "react";
 import Products from "./sections/Products";
+import Orders from "./sections/Orders";
+import Cart from "./sections/Cart";
 
 
 const Api = () => {
@@ -32,7 +34,8 @@ const Api = () => {
             <PublicKeys spacing={spacing}/>
             <Users spacing={spacing}/>
             <Products spacing={spacing}/>
-            <Users spacing={spacing}/>
+            <Orders spacing={spacing}/>
+            <Cart spacing={spacing}/>
         </DashboardLayout>
     )
 }
