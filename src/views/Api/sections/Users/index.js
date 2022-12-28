@@ -72,7 +72,7 @@ const Users = ({spacing}) => {
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Users</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>Oxinance API provides built-in User authentication. This object represents a logged-in customer of your business. It lets you assign <TipWord title={"Order object"}>Orders</TipWord>, keep track of Shopping Cart and manage <TipWord title={"Shipping Addresses"}>Shipping Addresses</TipWord>.</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Oxinance API provides built-in User authentication. This object represents a logged-in customer of your business. It lets you place <TipWord title={"Order object"}>Orders</TipWord>, keep track of Shopping Cart and manage <TipWord title={"Shipping Addresses"}>Shipping Addresses</TipWord>.</p>
                     <br/>
                     <p style={{fontSize: 14, color: "#4F566B"}}>In order to access this API, your Shop settings must have <SyntaxText>Allow Authentication</SyntaxText> option set to <SyntaxText>true</SyntaxText>. This can be done through <TipWord title={"Click to visit"}>Oxinance Dashboard</TipWord>.</p>
                 </Grid>
