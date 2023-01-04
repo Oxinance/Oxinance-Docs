@@ -11,8 +11,11 @@ import Collapsible from "../Users/Collapsible";
 import GetCurrentUser from "../Users/GetCurrentUser";
 import RegisterUser from "../Users/RegisterUser";
 import LoginUser from "../Users/LoginUser";
-import UserObject from "../Users/UserObject";
-import {Payment} from "@mui/icons-material";
+import CartItemObject from "./CartItemObject";
+import GetCartItems from "./GetCartItems";
+import CreateCartItem from "./CreateCartItem";
+
+const CartWord = () => <TipWord title={"Abstraction that refers to a collection of Cart Items"}>Cart</TipWord>
 
 const Cart = ({spacing}) => {
 
@@ -72,29 +75,30 @@ const Cart = ({spacing}) => {
         <>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
-                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Cart</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>The cart object keeps track of what your customers want to buy, when a customer successfully completes a checkout, his cart is emptied and the <SyntaxText>order_items</SyntaxText> of the order will be what the user had in his cart when the <TipWord>Payment Intent</TipWord> or <TipWord>Checkout Session</TipWord> was created.</p>
+                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Cart Items (Cart)</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Cart Item object is used to represent a Product/Quantity combination the User wants to buy, a User can have multiple <TipWord>Cart Items</TipWord>.</p>
                     <br/>
-                    <p style={{fontSize: 14, color: "#4F566B"}}>Non-authenticated customers are not able to access this API.<br/><br/>In order to simulate a cart for a non-authenticated customer we recommend you use the <TipWord>Local Storage</TipWord> of the device to save the cart items along with the quantity and then use <TipWord>Guest Checkout API</TipWord> to generate a <TipWord>Guest Checkout</TipWord> for the non-authenticated customer.</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>The User&apos;s <CartWord/> is basically just a list of <TipWord>Cart Items</TipWord>, you can only interact with <TipWord>Cart Items</TipWord> using our API because the <CartWord/> object does not contain any properties and it only exists as a link between multiple <TipWord>Cart Items</TipWord> and a User.</p>
+                    <br/>
+                    <p style={{fontSize: 14, color: "#4F566B"}}>Non-authenticated customers are not able to access this API.<br/><br/>In order to simulate a cart for non-authenticated customers we recommend you use the <TipWord>Local Storage</TipWord> of the device to save the cart items along with the quantity and then use <TipWord>Guest Checkout API</TipWord> to generate a <TipWord>Guest Checkout</TipWord> for the non-authenticated customer.</p>
                 </Grid>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all items from cart"} method={"GET"}>/v1/cart</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Adds new item to cart"} method={"POST"}>/v1/cart/add</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Retrieves specific item from cart"} method={"GET"}>/v1/cart/:id</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Removes item from cart"} method={"DELETE"}>/v1/cart/:id</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Changes the quantity of a specific item"} method={"PUT"}>/v1/cart/:id/quantity</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all items from cart"} method={"GET"}>/v1/cart/items</Endpoint>
+                        <Endpoint onClick={scrollToLoginUser} title={"Adds new item to cart"} method={"POST"}>/v1/cart/items</Endpoint>
+                        <Endpoint onClick={scrollToLoginUser} title={"Removes item from cart"} method={"DELETE"}>/v1/cart/items/:id</Endpoint>
+                        <Endpoint onClick={scrollToLoginUser} title={"Changes the quantity of a specific item"} method={"PUT"}>/v1/cart/items/:id/quantity</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>
             <Collapsible open={expand}>
                 <Divider/>
-                <UserObject spacing={spacing}/>
+                <CartItemObject spacing={spacing}/>
                 <Divider/>
-                <GetCurrentUser spacing={spacing} ref={getCurrentUserRef}/>
+                <GetCartItems spacing={spacing} ref={getCurrentUserRef}/>
                 <Divider/>
-                <LoginUser spacing={spacing} ref={loginUserRef}/>
+                <CreateCartItem spacing={spacing} ref={loginUserRef}/>
                 <Divider/>
                 <RegisterUser spacing={spacing} ref={registerUserRef}/>
             </Collapsible>

@@ -5,15 +5,14 @@ import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
-import {exampleArrayResponse, exampleResponse} from "../data";
+import {listResponse} from "../data";
 import Divider from "@mui/material/Divider";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
-const endpoint = "/v1/products/:id"
-const productId = "prod_MsgdQ7sIvoLL2H"
+const endpoint = "/v1/cart/items"
 
-const GetProduct = forwardRef((props, ref) => {
+const CreateCartItem = forwardRef((props, ref) => {
 
     const [selectedLanguage, setSelectedLanguage] = useState("Node JS")
 
@@ -26,7 +25,7 @@ const GetProduct = forwardRef((props, ref) => {
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>2</span></p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>3</span> <Token>const</Token> oxinance = Oxinance(<String>&quot;{examplePublicKey}&quot;</String>);</p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>4</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> user = oxinance.getProduct(<String>&quot;{productId}&quot;</String>);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> user = oxinance.getCurrentUser(<String>&quot;{exampleAuthToken}&quot;</String>);</p>
 
                 </>
             )
@@ -37,14 +36,15 @@ const GetProduct = forwardRef((props, ref) => {
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>1</span> <Token>const</Token> axios = require(<String>&quot;axios&quot;</String>);</p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>2</span></p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>3</span> axios.defaults.baseURL = <String>&quot;https://api.oxinance.com&quot;</String>;</p>
-                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>4</span> axios.defaults.headers.common[<String>&quot;project-public-key&quot;</String>] = <String>&quot;{examplePublicKey}&quot;</String>;</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>3</span> axios.defaults.headers.common[<String>&quot;project-public-key&quot;</String>] = <String>&quot;{examplePublicKey}&quot;</String>;</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>4</span> axios.defaults.headers.common[<String>&quot;project-authorization&quot;</String>] = <String>&quot;Token {exampleAuthToken}&quot;</String>;</p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>5</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>6</span> <Token>const</Token> products = <Token>await</Token> axios.get(<String>&quot;https://api.oxinance.com/v1/products/prod_MsgdQ7sIvoLL2H&quot;</String>);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>6</span> <Token>const</Token> user = <Token>await</Token> axios.get(<String>&quot;{endpoint}&quot;</String>);</p>
                 </>
             )
         } else if (selectedLanguage === "cURL") {
             return (
-                <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/products/prod_MsgdQ7sIvoLL2H</Comment> -XGET \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String></p>
+                <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/cart/items</Comment> -XGET \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String></p>
             )
         }
     }
@@ -52,8 +52,8 @@ const GetProduct = forwardRef((props, ref) => {
     return (
         <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
-                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get product</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Retrieves the details of an existing product. Supply the unique product ID and Oxinance will return the corresponding product information.</p>
+                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Create cart item</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Returns a list of cart items belonging to the logged-in User.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
                 <Divider/>
@@ -62,11 +62,11 @@ const GetProduct = forwardRef((props, ref) => {
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Returns</p>
                 <Divider/>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Returns a product object if a valid identifier was provided.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the User&apos;s cart items.</p>
             </Grid>
             <Grid item xs={12} lg={6}>
-                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Get product</p>
-                <Code title={<p style={{color: "#A3ACB9", fontSize: 10, fontFamily: "Menlo, Consolas, monospace"}}><Token>GET</Token> {endpoint}</p>} selectedLanguage={selectedLanguage} showMenu={true} menuItems={[
+                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Public Keys</p>
+                <Code title={<p style={{color: "#A3ACB9", fontSize: 10, fontFamily: "Menlo, Consolas, monospace"}}><Token>POST</Token> {endpoint}</p>} selectedLanguage={selectedLanguage} showMenu={true} menuItems={[
                     {
                         label: "Node JS", onClick: () => setSelectedLanguage("Node JS"),
                     },
@@ -80,11 +80,11 @@ const GetProduct = forwardRef((props, ref) => {
                     {renderGlobalPublicKeyContent()}
                 </Code>
                 <EndpointsCode title={"RESPONSE"} style={{marginTop: 10}}>
-                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(exampleResponse)}}/>
+                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(listResponse)}}/>
                 </EndpointsCode>
             </Grid>
         </Grid>
     )
 })
 
-export default GetProduct;
+export default CreateCartItem;
