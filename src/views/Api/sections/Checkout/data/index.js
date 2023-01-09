@@ -1,4 +1,5 @@
 import SyntaxText from "../../../components/SyntaxText";
+import {TipWord} from "../../../components/Keywords";
 
 
 const binanceResponse = {
@@ -121,4 +122,20 @@ const stripeCheckoutAttributes = [
     },
 ]
 
-export { binanceResponse, binanceParameters, binanceAttributes, stripeCheckoutAttributes, stripeCheckoutResponse, stripeCheckoutParameters }
+const stripePaymentIntentResponse = {
+    "client_secret": "pi_3MOBS6PUv1akEq5t04wfLlt0_secret_F2CWVC4VKitVFwXk59RZM3KPK"
+}
+
+const stripePaymentIntentAttributes = [
+    {
+        attribute: "client_secret",
+        dataType: "string",
+        description: <>
+            <p>The client secret can be used to complete a payment from your frontend. It should not be stored, logged, or exposed to anyone other than the customer.</p>
+            <br/>
+            <p>See how to integrate a checkout into your website using <TipWord title={"Facebook front-end library"}>React</TipWord> in <TipWord onClick={() => window.open("https://stripe.com/docs/stripe-js/react", "_blank")}>Stripe.js</TipWord> documentation.</p>
+        </>
+    },
+]
+
+export { binanceResponse, binanceParameters, binanceAttributes, stripeCheckoutAttributes, stripeCheckoutResponse, stripeCheckoutParameters, stripePaymentIntentResponse, stripePaymentIntentAttributes }

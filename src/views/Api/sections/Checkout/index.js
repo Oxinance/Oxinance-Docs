@@ -9,6 +9,7 @@ import Collapsible from "../Users/Collapsible";
 import Binance from "./Binance";
 import Divider from "@mui/material/Divider";
 import StripeCheckoutSession from "./StripeCheckoutSession";
+import StripePaymentIntent from "./StripePaymentIntent";
 
 const Checkout = ({spacing}) => {
 
@@ -91,6 +92,8 @@ const Checkout = ({spacing}) => {
                 <Binance spacing={spacing}/>
                 <Divider/>
                 <StripeCheckoutSession spacing={spacing}/>
+                <Divider/>
+                <StripePaymentIntent spacing={spacing}/>
             </Collapsible>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", borderBottom: "1px solid #E3E8EE", paddingBottom: 100}} container>
                 <Grid style={{margin: "auto"}} item sx={12}>

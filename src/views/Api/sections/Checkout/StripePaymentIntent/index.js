@@ -6,7 +6,8 @@ import SyntaxText from "../../../components/SyntaxText";
 import {
     stripeCheckoutAttributes,
     stripeCheckoutParameters,
-    stripeCheckoutResponse
+    stripeCheckoutResponse, stripePaymentIntentAttributes,
+    stripePaymentIntentResponse
 } from "../data";
 import {jsonSyntaxHighlight} from "../../Users/utils";
 import Parameter from "../../../components/Parameter";
@@ -15,9 +16,9 @@ import {Comment, String, TipWord, Token} from "../../../components/Keywords";
 import {useState} from "react";
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
-const endpoint = "/v1/checkout/stripe/checkout-session"
+const endpoint = "/v1/checkout/stripe/payment-intent"
 
-const StripeCheckoutSession = ({spacing}) => {
+const StripePaymentIntent = ({spacing}) => {
 
     const [selectedLanguage, setSelectedLanguage] = useState("Node JS")
 
@@ -58,10 +59,10 @@ const StripeCheckoutSession = ({spacing}) => {
     return (
         <Grid style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
-                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Stripe Checkout Session</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>A Checkout Session represents your customer&apos;s session as they pay for one-time purchases or subscriptions. We recommend creating a new Checkout Session each time your customer attempts to pay.</p>
+                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Stripe Payment Intents</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Use the Payment Intents API to integrate checkouts directly into your shop and handle complex payment flows. It tracks a payment from creation through checkout, and triggers additional authentication steps when required.</p>
                 <br/>
-                <p style={{fontSize: 14, color: "#4F566B"}}>See more on <TipWord onClick={() => window.open("https://stripe.com/docs/api/checkout/sessions", "_blank")}>Stripe Checkout Sessions</TipWord> official documentation.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>See more on <TipWord onClick={() => window.open("https://stripe.com/docs/api/payment_intents", "_blank")}>Stripe Payment Intents</TipWord> official documentation.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Request parameters</p>
                 {stripeCheckoutParameters.map((attribute, index) => {
@@ -69,7 +70,7 @@ const StripeCheckoutSession = ({spacing}) => {
                 })}
                 <Divider/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Response attributes</p>
-                {stripeCheckoutAttributes.map((attribute, index) => {
+                {stripePaymentIntentAttributes.map((attribute, index) => {
                     return <Attribute key={index} data={attribute}/>
                 })}
             </Grid>
@@ -89,11 +90,11 @@ const StripeCheckoutSession = ({spacing}) => {
                     {renderGlobalPublicKeyContent()}
                 </Code>
                 <EndpointsCode title={"RESPONSE"} style={{marginTop: 10}}>
-                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(stripeCheckoutResponse)}}/>
+                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(stripePaymentIntentResponse)}}/>
                 </EndpointsCode>
             </Grid>
         </Grid>
     )
 }
 
-export default StripeCheckoutSession;
+export default StripePaymentIntent;

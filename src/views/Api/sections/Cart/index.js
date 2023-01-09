@@ -77,8 +77,8 @@ const Cart = ({spacing}) => {
         <>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
-                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Cart Items (Cart)</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>Cart Item object is used to represent a Product/Quantity combination the User wants to buy, a User can have multiple <TipWord>Cart Items</TipWord>.</p>
+                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Cart Items</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>The Cart Item object is used to represent a Product/Quantity combination the User wants to buy, a User can have multiple <TipWord>Cart Items</TipWord>.</p>
                     <br/>
                     <p style={{fontSize: 16, color: "#4F566B"}}>The User&apos;s <CartWord/> is basically just a list of <TipWord>Cart Items</TipWord>, you can only interact with <TipWord>Cart Items</TipWord> using our API because the <CartWord/> object does not contain any properties and it only exists as a link between multiple <TipWord>Cart Items</TipWord> and a User.</p>
                     <br/>

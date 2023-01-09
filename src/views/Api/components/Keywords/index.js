@@ -10,11 +10,16 @@ const Comment = ({children}) => <span style={{color: "#A3ACB9", fontFamily: "mon
 const BlankLine = ({number}) => <p style={{color: "#697386", fontFamily: "monospace", fontSize: 13}}>{number}</p>
 
 const TipWord = ({children, title, onClick, style = {}}) => {
-    return (
-        <Tooltip title={title} placement={"top"}>
-            <span onClick={onClick} style={{...style, color: "#556CD6"}}>{children}</span>
-        </Tooltip>
-    )
+
+    if (title) {
+        return (
+            <Tooltip title={title} placement={"top"}>
+                <span onClick={onClick} style={{...style, color: "#556CD6"}}>{children}</span>
+            </Tooltip>
+        )
+    }
+
+    return <span className={"hover-pointer"} onClick={onClick} style={{...style, color: "#556CD6"}}>{children}</span>
 }
 
 export {String, Token, Comment, BlankLine, TipWord};

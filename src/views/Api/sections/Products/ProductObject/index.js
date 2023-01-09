@@ -5,6 +5,7 @@ import Attribute from "../../../components/Attribute";
 import SyntaxText from "../../../components/SyntaxText";
 import {attributes, exampleResponse} from "../data";
 import {jsonSyntaxHighlight} from "../../Users/utils";
+import {TipWord} from "../../../components/Keywords";
 
 const ProductObject = ({spacing}) => {
 
@@ -12,7 +13,8 @@ const ProductObject = ({spacing}) => {
         <Grid style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>The product object</p>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Attributes</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>See more on <TipWord onClick={() => window.open("https://stripe.com/docs/api/products/object", "_blank")}>Stripe Products</TipWord> official documentation.</p>
+                <p style={{fontSize: 16, color: "#4F566B", marginTop: 10}}>Attributes</p>
                 {attributes.map((attribute, index) => {
                     return <Attribute key={index} data={attribute}/>
                 })}

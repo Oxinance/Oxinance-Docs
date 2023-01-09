@@ -75,6 +75,7 @@ const Products = ({spacing}) => {
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Products</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Products describe the specific goods or services you offer to your customers.</p>
                     <p style={{fontSize: 16, color: "#4F566B"}}>Oxinance fetches your <TipWord>products</TipWord> from the <TipWord>Stripe</TipWord> account your shop is connected with.</p>
                     <br/>
                     <p style={{fontSize: 14, color: "#4F566B"}}>In order to access this API, your Shop must be connected to a Stripe Account. This can be done through <TipWord title={"Click to visit"}>Oxinance Dashboard</TipWord>.</p>
