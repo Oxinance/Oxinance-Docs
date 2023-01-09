@@ -6,7 +6,7 @@ import {useState} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess"
 
-const Attribute = ({data, style = {}}) => {
+const Parameter = ({data, style = {}}) => {
 
     const [expand, setExpand] = useState(false)
 
@@ -29,14 +29,13 @@ const Attribute = ({data, style = {}}) => {
 
     const renderNestedAttributes = () => {
         return(
-        <>
-            <Collapsible open={expand}>
+            <>
+                <Collapsible open={expand}>
                     {data.nested.map((attribute, index) => {
-                        console.log(data)
-                        return <Attribute key={index} style={{paddingBottom: 10, marginLeft: data.nestedDepth * 25}} data={attribute}/>
+                        return <Parameter key={index} style={{paddingBottom: 10, marginLeft: data.nestedDepth * 25}} data={attribute}/>
                     })}
-            </Collapsible>
-        </>
+                </Collapsible>
+            </>
         )
     }
 
@@ -45,7 +44,7 @@ const Attribute = ({data, style = {}}) => {
             <Divider/>
             <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <div>
-                    <p><SyntaxText>{data.attribute}</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "monospace", fontSize: 13}}>{data.dataType}</span></p>
+                    <p><SyntaxText>{data.attribute}</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "monospace", fontSize: 13}}>{data.dataType}</span> {data.orangeLabel && <span style={{fontSize: 10, color: "#E56F4A"}}>{data.orangeLabel}</span>}</p>
                     <p style={{fontSize: 14, color: "#4F566B", marginBottom: 10}}>{data.description}</p>
                     {data.nested && renderExpandButton()}
                 </div>
@@ -55,4 +54,4 @@ const Attribute = ({data, style = {}}) => {
     )
 }
 
-export default Attribute;
+export default Parameter;

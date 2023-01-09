@@ -1,22 +1,16 @@
 import Grid from "@mui/material/Grid";
 import {TipWord} from "../../components/Keywords";
-import SyntaxText from "../../components/SyntaxText";
 import EndpointsCode from "../../components/EndpointsCode";
 import Endpoint from "../../components/Endpoint";
-import {Divider} from "@mui/material";
 import {useRef, useState} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Collapsible from "../Users/Collapsible";
-import GetCurrentUser from "../Users/GetCurrentUser";
-import RegisterUser from "../Users/RegisterUser";
-import LoginUser from "../Users/LoginUser";
-import UserObject from "../Users/UserObject";
-import OrderObject from "./OrderObject";
-import GetOrder from "./GetOrder";
-import GetOrders from "./GetOrders";
+import Binance from "./Binance";
+import Divider from "@mui/material/Divider";
+import StripeCheckoutSession from "./StripeCheckoutSession";
 
-const Orders = ({spacing}) => {
+const Checkout = ({spacing}) => {
 
     const [expand, setExpand] = useState(false)
     const getCurrentUserRef = useRef(null);
@@ -74,29 +68,29 @@ const Orders = ({spacing}) => {
         <>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
-                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Orders</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>Order objects keep track of user purchases inside your Shop. Each order is created after a payment from any platform is succeeded.</p>
+                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Checkout</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Checkout API offers a fast and secure way of processing payments from a wide range of payment processors.</p>
                     <br/>
-                    <p style={{fontSize: 14, color: "#4F566B"}}>An order placed by a non-authenticated customer using the <TipWord title={"An Oxinance API that allows non-authenticated customers to place orders"}>Guest Checkout API</TipWord> will still be visible for you in <TipWord>Oxinance Dashboard</TipWord> but will not be retrievable by the user as he does not have an <TipWord>Authentication Token</TipWord>.
+                    <p style={{fontSize: 14, color: "#4F566B"}}>Each payment processor needs to be configured beforehand in <TipWord title={"An Oxinance API that allows non-authenticated customers to place orders"}>Oxinance Dashboard</TipWord> in order to be accessed.
                         <br/>
                         <br/>
-                        In this case Oxinance will send an email message to the email address provided by the user during the checkout containing all order details.</p>
+                        Checkout API is strictly designed for authenticated users, if you wish to allow non-authenticated users to buy from your shop you must use <TipWord>Guest Checkout API</TipWord>.</p>
                 </Grid>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"GET"}>/v1/orders</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Retrieves a specific order"} method={"GET"}>/v1/orders/:id</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/binance</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/paypal</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/stripe/payment-intent</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/stripe/checkout-session</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>
             <Collapsible open={expand}>
                 <Divider/>
-                <OrderObject spacing={spacing}/>
+                <Binance spacing={spacing}/>
                 <Divider/>
-                <GetOrders spacing={spacing} ref={getCurrentUserRef}/>
-                <Divider/>
-                <GetOrder spacing={spacing} ref={loginUserRef}/>
+                <StripeCheckoutSession spacing={spacing}/>
             </Collapsible>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", borderBottom: "1px solid #E3E8EE", paddingBottom: 100}} container>
                 <Grid style={{margin: "auto"}} item sx={12}>
@@ -107,4 +101,4 @@ const Orders = ({spacing}) => {
     )
 }
 
-export default Orders;
+export default Checkout;

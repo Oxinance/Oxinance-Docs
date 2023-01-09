@@ -14,6 +14,8 @@ import LoginUser from "../Users/LoginUser";
 import CartItemObject from "./CartItemObject";
 import GetCartItems from "./GetCartItems";
 import CreateCartItem from "./CreateCartItem";
+import DeleteCartItem from "./DeleteCartItem";
+import UpdateCartItem from "./UpdateCartItem";
 
 const CartWord = () => <TipWord title={"Abstraction that refers to a collection of Cart Items"}>Cart</TipWord>
 
@@ -100,7 +102,9 @@ const Cart = ({spacing}) => {
                 <Divider/>
                 <CreateCartItem spacing={spacing} ref={loginUserRef}/>
                 <Divider/>
-                <RegisterUser spacing={spacing} ref={registerUserRef}/>
+                <DeleteCartItem spacing={spacing} ref={registerUserRef}/>
+                <Divider/>
+                <UpdateCartItem spacing={spacing} ref={registerUserRef}/>
             </Collapsible>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", borderBottom: "1px solid #E3E8EE", paddingBottom: 100}} container>
                 <Grid style={{margin: "auto"}} item sx={12}>

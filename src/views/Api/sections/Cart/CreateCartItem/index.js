@@ -5,7 +5,7 @@ import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
-import {listResponse} from "../data";
+import {listResponse, response} from "../data";
 import Divider from "@mui/material/Divider";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
@@ -25,7 +25,7 @@ const CreateCartItem = forwardRef((props, ref) => {
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>2</span></p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>3</span> <Token>const</Token> oxinance = Oxinance(<String>&quot;{examplePublicKey}&quot;</String>);</p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>4</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> user = oxinance.getCurrentUser(<String>&quot;{exampleAuthToken}&quot;</String>);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> cartItem = oxinance.createCartItem(<String>&quot;price_1M8vGZPUv1akEq5tPuAnbzp1&quot;</String>, 2);</p>
 
                 </>
             )
@@ -39,12 +39,12 @@ const CreateCartItem = forwardRef((props, ref) => {
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>3</span> axios.defaults.headers.common[<String>&quot;project-public-key&quot;</String>] = <String>&quot;{examplePublicKey}&quot;</String>;</p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>4</span> axios.defaults.headers.common[<String>&quot;project-authorization&quot;</String>] = <String>&quot;Token {exampleAuthToken}&quot;</String>;</p>
                     <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>5</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>6</span> <Token>const</Token> user = <Token>await</Token> axios.get(<String>&quot;{endpoint}&quot;</String>);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#697386"}}>6</span> <Token>const</Token> cartItem = <Token>await</Token> axios.post(<String>&quot;{endpoint}&quot;</String>, &#123;price_id: <String>&quot;price_1M8vGZPUv1akEq5tPuAnbzp1&quot;</String>, quantity: 2&#125;);</p>
                 </>
             )
         } else if (selectedLanguage === "cURL") {
             return (
-                <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/cart/items</Comment> -XGET \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String></p>
+                <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/cart/items</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String>  \ <br/>&nbsp;&nbsp;-d price_id=<String>&quot;price_1M8vGZPUv1akEq5tPuAnbzp1&quot;</String> \ <br/>&nbsp;&nbsp;-d quantity=2</p>
             )
         }
     }
@@ -53,16 +53,21 @@ const CreateCartItem = forwardRef((props, ref) => {
         <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Create cart item</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Returns a list of cart items belonging to the logged-in User.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Creates a Cart Item with the specified <SyntaxText>price_id</SyntaxText> and <SyntaxText>quantity</SyntaxText>.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>If the User already possesses a Cart Item with the specified <SyntaxText>price_id</SyntaxText>, the API will sum the <SyntaxText>quantity</SyntaxText> of both Cart Items and return the older one.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
                 <Divider/>
-                <p style={{fontSize: 12, color: "#A3ACB9"}}>No parameters</p>
+                <p><SyntaxText>price_id</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}>string</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>The Price ID belonging to the Product the User wants to buy, if the User already possesses a Cart Item with the specified <SyntaxText>price_id</SyntaxText>, the API will sum the <SyntaxText>quantity</SyntaxText> of both Cart Items and return the older one.</p>
+                <Divider/>
+                <p><SyntaxText>quantity</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}>integer</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>The amount of units the User wants to purchase from this particular Product.</p>
                 <br/>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Returns</p>
                 <Divider/>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the User&apos;s cart items.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the created Cart Item.</p>
             </Grid>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Public Keys</p>
@@ -80,7 +85,7 @@ const CreateCartItem = forwardRef((props, ref) => {
                     {renderGlobalPublicKeyContent()}
                 </Code>
                 <EndpointsCode title={"RESPONSE"} style={{marginTop: 10}}>
-                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(listResponse)}}/>
+                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(response)}}/>
                 </EndpointsCode>
             </Grid>
         </Grid>

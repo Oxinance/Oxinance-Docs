@@ -6,6 +6,7 @@ import {useEffect, useRef, useState} from "react";
 import Products from "./sections/Products";
 import Orders from "./sections/Orders";
 import Cart from "./sections/Cart";
+import Checkout from "./sections/Checkout";
 
 
 const Api = () => {
@@ -36,6 +37,7 @@ const Api = () => {
             <Products spacing={spacing}/>
             <Orders spacing={spacing}/>
             <Cart spacing={spacing}/>
+            <Checkout spacing={spacing}/>
         </DashboardLayout>
     )
 }
