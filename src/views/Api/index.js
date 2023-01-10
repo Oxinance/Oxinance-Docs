@@ -6,7 +6,7 @@ import {useEffect, useState} from "react";
 import Products from "./sections/Products";
 import Orders from "./sections/Orders";
 import Cart from "./sections/Cart";
-import Checkout from "./sections/Checkout";
+import Checkout from "./sections/Checkouts";
 import {useLocation} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {

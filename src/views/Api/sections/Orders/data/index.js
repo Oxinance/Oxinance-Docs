@@ -244,7 +244,7 @@ const attributes = [
     {
         attribute: "email",
         dataType: "string",
-        description: "Email input during the checkout, this field is required in case the order is processed via Guest Checkout API."
+        description: "Email input during the checkout, this field is required in case the order is processed via Guest Checkouts API."
     },
     {
         attribute: "number",

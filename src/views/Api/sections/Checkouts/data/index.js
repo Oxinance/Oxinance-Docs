@@ -94,7 +94,7 @@ const binanceAttributes = [
     {
         attribute: "checkoutUrl",
         dataType: "string",
-        description: "Binance hosted checkout page URL. Redirect customers to this URL to take them to Checkout."
+        description: "Binance hosted checkout page URL. Redirect customers to this URL to take them to Checkouts."
     },
     {
         attribute: "deeplink",
@@ -118,7 +118,7 @@ const stripeCheckoutAttributes = [
     {
         attribute: "url",
         dataType: "string",
-        description: "Stripe hosted checkout page URL. Redirect customers to this URL to take them to Checkout."
+        description: "Stripe hosted checkout page URL. Redirect customers to this URL to take them to Checkouts."
     },
 ]
 

@@ -190,7 +190,7 @@ const sidebarRoutes = [
     },
     {
         type: "collapse",
-        name: "Checkout",
+        name: "Checkouts",
         key: "payments  ",
         icon: <CreditCard size="16px" />,
         collapse: [

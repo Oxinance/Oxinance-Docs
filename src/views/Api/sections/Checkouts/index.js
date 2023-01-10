@@ -55,8 +55,8 @@ const Checkout = ({spacing}) => {
         <>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
-                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Checkout</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>Checkout API offers a fast and secure way of processing payments from a wide range of payment processors.</p>
+                    <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Checkouts</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Checkouts API offers a fast and secure way of processing payments from a wide range of payment processors.</p>
                     <br/>
                     <p style={{fontSize: 14, color: "#4F566B"}}>Each payment processor needs to be configured beforehand in <TipWord title={"An Oxinance API that allows non-authenticated customers to place orders"}>Oxinance Dashboard</TipWord> in order to be accessed.
                         <br/>
@@ -66,10 +66,10 @@ const Checkout = ({spacing}) => {
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/binance</Endpoint>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/paypal</Endpoint>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/stripe/payment-intent</Endpoint>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkout/stripe/checkout-session</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/binance</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/paypal</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/stripe/payment-intent</Endpoint>
+                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/stripe/checkout-session</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>
