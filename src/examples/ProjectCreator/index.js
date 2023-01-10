@@ -35,7 +35,6 @@ import {
 import SoftInput from "../../components/SoftInput";
 import Button from "@mui/material/Button";
 import ProjectsClient from "../../clients/ProjectsClient";
-import {setProjects} from "../../redux/actions/ProjectsActions";
 import {useDispatch} from "react-redux";
 
 function ProjectCreator() {

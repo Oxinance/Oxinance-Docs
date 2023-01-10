@@ -61,7 +61,7 @@ const attributes = [
     {
         attribute: "metadata",
         dataType: "hash",
-        description: "Hash that can be used to store any additional data about a user"
+        description: "Hash that can be used to store any additional information about a user"
     },
 ]
 

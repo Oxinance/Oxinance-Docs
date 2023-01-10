@@ -16,19 +16,26 @@ import GetCartItems from "./GetCartItems";
 import CreateCartItem from "./CreateCartItem";
 import DeleteCartItem from "./DeleteCartItem";
 import UpdateCartItem from "./UpdateCartItem";
+import {useDispatch, useSelector} from "react-redux";
+import {collapseCartItemsAction, expandCartItemsAction} from "../../../../redux/actions/ApiActions";
 
 const CartWord = () => <TipWord title={"Abstraction that refers to a collection of Cart Items"}>Cart</TipWord>
 
 const Cart = ({spacing}) => {
 
-    const [expand, setExpand] = useState(false)
+    const expand = useSelector(state => state.api.expandCartItems);
+    const dispatch = useDispatch();
     const getCurrentUserRef = useRef(null);
     const loginUserRef = useRef(null);
     const registerUserRef = useRef(null);
 
+    const expandCartItems = () => dispatch(expandCartItemsAction());
+
+    const collapseCartItems = () => dispatch(collapseCartItemsAction());
+
     const scrollToCurrentUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandCartItems()
             setTimeout(() => {
                 getCurrentUserRef.current.scrollIntoView()
             }, 500)
@@ -38,7 +45,7 @@ const Cart = ({spacing}) => {
 
     const scrollToLoginUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandCartItems()
             setTimeout(() => {
                 loginUserRef.current.scrollIntoView()
             }, 500)
@@ -46,27 +53,17 @@ const Cart = ({spacing}) => {
         loginUserRef.current.scrollIntoView()
     }
 
-    const scrollToRegisterUser = () => {
-        if (!expand) {
-            setExpand(true)
-            setTimeout(() => {
-                registerUserRef.current.scrollIntoView()
-            }, 500)
-        }
-        registerUserRef.current.scrollIntoView()
-    }
-
     const renderExpandButton = () => {
         if (expand) {
             return (
-                <div onClick={() => setExpand(false)} className={"ShowCollapsedSectionButton"}>
+                <div onClick={collapseCartItems} className={"ShowCollapsedSectionButton"}>
                     <p>Close</p>
                     <ExpandLessIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
                 </div>
             )
         }
         return (
-            <div onClick={() => setExpand(true)} className={"ShowCollapsedSectionButton"}>
+            <div onClick={expandCartItems} className={"ShowCollapsedSectionButton"}>
                 <p>Expand</p>
                 <ExpandMoreIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
             </div>

@@ -50,7 +50,7 @@ const GetProduct = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-products-get"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get product</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Retrieves the details of an existing product. Supply the unique product ID and Oxinance will return the corresponding product information.</p>

@@ -49,7 +49,7 @@ const GetProducts = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-products-list"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get products</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Returns an array of active products from the Stripe account connected to the Shop.</p>

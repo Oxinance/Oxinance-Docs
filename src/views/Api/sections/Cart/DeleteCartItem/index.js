@@ -7,6 +7,7 @@ import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
 import {listResponse} from "../data";
 import Divider from "@mui/material/Divider";
+import {useNavigate} from "react-router-dom";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
@@ -15,6 +16,7 @@ const endpoint = "/v1/cart/items/:id"
 const DeleteCartItem = forwardRef((props, ref) => {
 
     const [selectedLanguage, setSelectedLanguage] = useState("Node JS")
+    const navigate = useNavigate();
 
     const renderGlobalPublicKeyContent = () => {
 
@@ -50,10 +52,10 @@ const DeleteCartItem = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-cart-items-delete"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Delete cart item</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Deletes a Cart Item and returns a list of cart items belonging to the logged-in User.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Deletes a <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord> and returns a <TipWord onClick={() => navigate("/api#cart-items/list-cart-items")}>list of Cart Items</TipWord> belonging to the logged-in user.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
                 <Divider/>
@@ -62,7 +64,7 @@ const DeleteCartItem = forwardRef((props, ref) => {
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Returns</p>
                 <Divider/>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the User&apos;s cart after deleting the specified Cart Item.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the user&apos;s cart after deleting the specified <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord>.</p>
             </Grid>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Public Keys</p>

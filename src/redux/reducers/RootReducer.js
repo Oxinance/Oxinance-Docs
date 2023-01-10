@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
-import ProjectsReducer from "./ProjectsReducer";
+import ApiReducer from "./ApiReducer";
 
 const RootReducer = combineReducers({
-    projects: ProjectsReducer,
+    api: ApiReducer,
 })
 
 export default RootReducer;

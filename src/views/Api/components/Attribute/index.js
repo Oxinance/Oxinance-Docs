@@ -32,7 +32,6 @@ const Attribute = ({data, style = {}}) => {
         <>
             <Collapsible open={expand}>
                     {data.nested.map((attribute, index) => {
-                        console.log(data)
                         return <Attribute key={index} style={{paddingBottom: 10, marginLeft: data.nestedDepth * 25}} data={attribute}/>
                     })}
             </Collapsible>

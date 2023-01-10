@@ -12,17 +12,26 @@ import GetCurrentUser from "./GetCurrentUser";
 import RegisterUser from "./RegisterUser";
 import LoginUser from "./LoginUser";
 import UserObject from "./UserObject";
+import {useDispatch, useSelector} from "react-redux";
+import {collapseUsersAction, expandUsersAction} from "../../../../redux/actions/ApiActions";
+import {useNavigate} from "react-router-dom";
 
 const Users = ({spacing}) => {
 
-    const [expand, setExpand] = useState(false)
+    const expand = useSelector(state => state.api.expandUsers)
+    const dispatch = useDispatch();
     const getCurrentUserRef = useRef(null);
     const loginUserRef = useRef(null);
     const registerUserRef = useRef(null);
+    const navigate = useNavigate();
+
+    const expandUsers = () => dispatch(expandUsersAction());
+
+    const collapseUsers = () => dispatch(collapseUsersAction());
 
     const scrollToCurrentUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandUsers()
             setTimeout(() => {
                 getCurrentUserRef.current.scrollIntoView()
             }, 500)
@@ -32,7 +41,7 @@ const Users = ({spacing}) => {
 
     const scrollToLoginUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandUsers()
             setTimeout(() => {
                 loginUserRef.current.scrollIntoView()
             }, 500)
@@ -42,7 +51,7 @@ const Users = ({spacing}) => {
 
     const scrollToRegisterUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandUsers()
             setTimeout(() => {
                 registerUserRef.current.scrollIntoView()
             }, 500)
@@ -53,14 +62,14 @@ const Users = ({spacing}) => {
     const renderExpandButton = () => {
         if (expand) {
             return (
-                <div onClick={() => setExpand(false)} className={"ShowCollapsedSectionButton"}>
+                <div onClick={collapseUsers} className={"ShowCollapsedSectionButton"}>
                     <p>Close</p>
                     <ExpandLessIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
                 </div>
             )
         }
         return (
-            <div onClick={() => setExpand(true)} className={"ShowCollapsedSectionButton"}>
+            <div onClick={expandUsers} className={"ShowCollapsedSectionButton"}>
                 <p>Expand</p>
                 <ExpandMoreIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
             </div>
@@ -72,7 +81,7 @@ const Users = ({spacing}) => {
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Users</p>
-                    <p style={{fontSize: 16, color: "#4F566B"}}>Oxinance API provides built-in User authentication. This object represents a logged-in customer of your business. It lets you place <TipWord title={"Order object"}>Orders</TipWord>, keep track of Shopping Cart and manage <TipWord title={"Shipping Addresses"}>Shipping Addresses</TipWord>.</p>
+                    <p style={{fontSize: 16, color: "#4F566B"}}>Oxinance API provides built-in User authentication. This object represents a logged-in customer of your business. It lets you place <TipWord onClick={() => navigate("/api#orders")}>Orders</TipWord>, keep track of <TipWord onClick={() => navigate("/api#cart-items")}>Cart Items</TipWord> and manage <TipWord title={"Shipping Addresses"}>Shipping Addresses</TipWord>.</p>
                     <br/>
                     <p style={{fontSize: 14, color: "#4F566B"}}>In order to access this API, your Shop settings must have <SyntaxText>Allow Authentication</SyntaxText> option set to <SyntaxText>true</SyntaxText>. This can be done through <TipWord title={"Click to visit"}>Oxinance Dashboard</TipWord>.</p>
                 </Grid>

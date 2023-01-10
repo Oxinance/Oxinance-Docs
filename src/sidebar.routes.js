@@ -106,19 +106,19 @@ const sidebarRoutes = [
         icon: <PersonIcon />,
         collapse: [
             {
-                name: "Register User",
-                key: "list-users",
-                route: "/dashboard/users",
+                name: "Get Current User",
+                key: "current-user",
+                route: "/api#users/current-user",
             },
             {
                 name: "Login User",
-                key: "create-products",
-                route: "/dashboard/create-user",
+                key: "login",
+                route: "/api#users/login",
             },
             {
-                name: "Get Current User",
-                key: "create-products",
-                route: "/dashboard/create-user",
+                name: "Register User",
+                key: "register",
+                route: "/api#users/register",
             },
         ]
     },
@@ -131,12 +131,12 @@ const sidebarRoutes = [
             {
                 name: "List Products",
                 key: "list-products",
-                route: "/dashboard/products",
+                route: "/api#products/list-products",
             },
             {
-                name: "Create Product",
-                key: "create-product",
-                route: "/dashboard/create-product",
+                name: "Get Product",
+                key: "get-product",
+                route: "/api#products/get-product",
             },
         ]
     },
@@ -150,30 +150,64 @@ const sidebarRoutes = [
             {
                 name: "List Orders",
                 key: "list-orders",
-                route: "/dashboard/orders"
+                route: "/api#orders/list-orders"
+            },
+            {
+                name: "Get Order",
+                key: "get-order",
+                route: "/api#orders/get-order"
             }
         ]
     },
     {
         type: "collapse",
-        name: "Payments",
+        name: "Cart Items",
+        key: "cart-items",
+        icon: <ShoppingCartIcon size="12px" />,
+        route: "/dashboards/automotive",
+        collapse: [
+            {
+                name: "List Cart Items",
+                key: "cart-item-list",
+                route: "/api#cart-items/list-cart-items"
+            },
+            {
+                name: "Create Cart Item",
+                key: "cart-item-create",
+                route: "/api#cart-items/create-cart-item"
+            },
+            {
+                name: "Delete Cart Item",
+                key: "cart-item-delete",
+                route: "/api#cart-items/delete-cart-item"
+            },
+            {
+                name: "Update quantity",
+                key: "cart-item-quantity",
+                route: "/api#cart-items/update-cart-item-quantity"
+            }
+        ]
+    },
+    {
+        type: "collapse",
+        name: "Checkout",
         key: "payments  ",
         icon: <CreditCard size="16px" />,
         collapse: [
             {
-                name: "Stripe",
-                key: "stripe",
-                route: "/dashboards/default",
-            },
-            {
                 name: "Binance",
                 key: "binance",
-                route: "/dashboards/automotive",
+                route: "/api#checkout/binance"
             },
             {
-                name: "PayPal",
-                key: "paypal",
-                route: "/dashboards/automotive",
+                name: "Stripe checkout session",
+                key: "stripe-checkout-session",
+                route: "/api#checkout/stripe-checkout-session"
+            },
+            {
+                name: "Stripe payment intent",
+                key: "stripe-payment-intent",
+                route: "/api#checkout/stripe-payment-intent"
             },
         ]
     },

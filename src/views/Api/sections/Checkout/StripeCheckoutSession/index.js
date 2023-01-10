@@ -56,7 +56,7 @@ const StripeCheckoutSession = ({spacing}) => {
 
 
     return (
-        <Grid style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
+        <Grid id={"api-checkout-stripe-checkout-session"} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Stripe Checkout Session</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>A Checkout Session represents your customer&apos;s session as they pay for one-time purchases or subscriptions. We recommend creating a new Checkout Session each time your customer attempts to pay.</p>

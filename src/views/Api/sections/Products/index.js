@@ -1,31 +1,33 @@
 import Grid from "@mui/material/Grid";
 import {TipWord} from "../../components/Keywords";
-import SyntaxText from "../../components/SyntaxText";
 import EndpointsCode from "../../components/EndpointsCode";
 import Endpoint from "../../components/Endpoint";
 import {Divider} from "@mui/material";
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Collapsible from "../Users/Collapsible";
-import UserObject from "../Users/UserObject";
-import GetCurrentUser from "../Users/GetCurrentUser";
-import LoginUser from "../Users/LoginUser";
-import RegisterUser from "../Users/RegisterUser";
 import ProductObject from "./ProductObject";
 import GetProducts from "./GetProducts";
 import GetProduct from "./GetProduct";
+import {useDispatch, useSelector} from "react-redux";
+import {collapseProductsAction, expandProductsAction} from "../../../../redux/actions/ApiActions";
 
 
 const Products = ({spacing}) => {
 
-    const [expand, setExpand] = useState(false)
+    const expand = useSelector(state => state.api.expandProducts);
+    const dispatch = useDispatch()
     const getProductsRef = useRef(null);
     const getProductRef = useRef(null);
 
+    const expandProducts = () => dispatch(expandProductsAction());
+
+    const collapseProducts = () => dispatch(collapseProductsAction());
+
     const scrollToCurrentUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandProducts()
             setTimeout(() => {
                 getProductsRef.current.scrollIntoView()
             }, 500)
@@ -35,7 +37,7 @@ const Products = ({spacing}) => {
 
     const scrollToLoginUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandProducts()
             setTimeout(() => {
                 getProductRef.current.scrollIntoView()
             }, 500)
@@ -43,27 +45,17 @@ const Products = ({spacing}) => {
         getProductRef.current.scrollIntoView()
     }
 
-    const scrollToRegisterUser = () => {
-        if (!expand) {
-            setExpand(true)
-            setTimeout(() => {
-                registerUserRef.current.scrollIntoView()
-            }, 500)
-        }
-        registerUserRef.current.scrollIntoView()
-    }
-
     const renderExpandButton = () => {
         if (expand) {
             return (
-                <div onClick={() => setExpand(false)} className={"ShowCollapsedSectionButton"}>
+                <div onClick={collapseProducts} className={"ShowCollapsedSectionButton"}>
                     <p>Close</p>
                     <ExpandLessIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
                 </div>
             )
         }
         return (
-            <div onClick={() => setExpand(true)} className={"ShowCollapsedSectionButton"}>
+            <div onClick={expandProducts} className={"ShowCollapsedSectionButton"}>
                 <p>Expand</p>
                 <ExpandMoreIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
             </div>

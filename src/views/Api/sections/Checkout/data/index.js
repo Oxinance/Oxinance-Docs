@@ -15,7 +15,7 @@ const binanceParameters = [
     {
         attribute: "shipping_address",
         dataType: "hash",
-        description: <p>Required if there is atleast 1 Cart Item with <SyntaxText>price.product.shippable</SyntaxText> equal to <SyntaxText>true</SyntaxText>.</p>,
+        description: <p>Required if there is atleast 1 <TipWord>Cart Item</TipWord> with <SyntaxText fontSize={12}>price.product.shippable</SyntaxText> equal to <SyntaxText fontSize={12}>true</SyntaxText>.</p>,
         orangeLabel: "REQUIRED CONDITIONALLY",
         nestedDepth: 1,
         nested: [

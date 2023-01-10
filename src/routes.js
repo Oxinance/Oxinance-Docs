@@ -9,7 +9,7 @@ const routes = [
           <AuthGuardedApp/>
     ),
     children: [
-      { path: "/api", element: <Api/> }
+      { path: "/api", element: <Api /> },
     ]
   }
 ]

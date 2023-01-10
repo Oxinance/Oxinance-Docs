@@ -230,7 +230,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             <Icon sx={{ fontWeight: "bold" }}>close</Icon>
           </SoftTypography>
         </SoftBox>
-        <SoftBox component={NavLink} to="dashboard" display="flex" alignItems="center">
+        <SoftBox component={NavLink} to="api" display="flex" alignItems="center">
           {brand && <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 2000.000000 328.000000" preserveAspectRatio="xMidYMid meet">
               <g transform="translate(0.000000,328.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
                   <path d="M1225 3265 c-302 -56 -534 -175 -740 -380 -288 -286 -448 -697 -462 -1187 -11 -357 46 -650 177 -923 72 -149 142 -248 265 -371 193 -196 419 -317 707 -381 122 -27 584 -26 708 1 275 60 501 178 691 363 116 113 193 217 268 366 128 251 191 540 191 872 0 327 -58 600 -185 862 -74 155 -162 280 -280 398 -199 200 -453 330 -744 380 -107 19 -495 19 -596 0z m533 -415 c269 -65 510 -267 650 -545 103 -206 160 -487 149 -739 -15 -360 -133 -666 -334 -871 -216 -219 -498 -319 -803 -286 -233 25 -402 104 -572 269 -171 165 -272 367 -330 654 -29 146 -32 422 -5 565 104 552 427 909 882 973 88 13 268 3 363 -20z"/>

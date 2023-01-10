@@ -57,7 +57,7 @@ const StripePaymentIntent = ({spacing}) => {
 
 
     return (
-        <Grid style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
+        <Grid id={"api-checkout-stripe-payment-intent"} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Stripe Payment Intents</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Use the Payment Intents API to integrate checkouts directly into your shop and handle complex payment flows. It tracks a payment from creation through checkout, and triggers additional authentication steps when required.</p>

@@ -50,7 +50,7 @@ const GetCurrentUser = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-users-current-user"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get current user</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Returns the User object for a valid <TipWord title={"Oxinance API uses Token-Based Authentication"}>Authentication Token</TipWord>, which can be sent with the prefix <SyntaxText fontSize={12}>Token</SyntaxText> on header <SyntaxText fontSize={12}>project-authorization</SyntaxText>.</p>

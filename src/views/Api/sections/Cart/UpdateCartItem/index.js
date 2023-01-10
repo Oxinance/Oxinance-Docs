@@ -50,20 +50,20 @@ const UpdateCartItem = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-cart-items-quantity"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Update cart item quantity</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Updates the <SyntaxText>quantity</SyntaxText> of a specific Cart Item.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Updates the <SyntaxText fontSize={12}>quantity</SyntaxText> of a specific <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord>.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
                 <Divider/>
                 <p><SyntaxText>quantity</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}>integer</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>The amount of units the User wants to purchase from the Product linked to the price.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>The amount of units the user wants to purchase from the Product linked to the price.</p>
                 <br/>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Returns</p>
                 <Divider/>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the updated Cart Item.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Returns the updated <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord>.</p>
             </Grid>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Public Keys</p>

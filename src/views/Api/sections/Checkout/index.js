@@ -10,17 +10,18 @@ import Binance from "./Binance";
 import Divider from "@mui/material/Divider";
 import StripeCheckoutSession from "./StripeCheckoutSession";
 import StripePaymentIntent from "./StripePaymentIntent";
+import {useDispatch, useSelector} from "react-redux";
+import {collapseCheckoutAction, expandCheckoutAction} from "../../../../redux/actions/ApiActions";
 
 const Checkout = ({spacing}) => {
 
-    const [expand, setExpand] = useState(false)
+    const expand = useSelector(state => state.api.expandCheckout);
+    const dispatch = useDispatch();
     const getCurrentUserRef = useRef(null);
-    const loginUserRef = useRef(null);
-    const registerUserRef = useRef(null);
 
     const scrollToCurrentUser = () => {
         if (!expand) {
-            setExpand(true)
+            expandCheckout()
             setTimeout(() => {
                 getCurrentUserRef.current.scrollIntoView()
             }, 500)
@@ -28,37 +29,22 @@ const Checkout = ({spacing}) => {
         getCurrentUserRef.current.scrollIntoView()
     }
 
-    const scrollToLoginUser = () => {
-        if (!expand) {
-            setExpand(true)
-            setTimeout(() => {
-                loginUserRef.current.scrollIntoView()
-            }, 500)
-        }
-        loginUserRef.current.scrollIntoView()
-    }
+    const expandCheckout = () => dispatch(expandCheckoutAction());
 
-    const scrollToRegisterUser = () => {
-        if (!expand) {
-            setExpand(true)
-            setTimeout(() => {
-                registerUserRef.current.scrollIntoView()
-            }, 500)
-        }
-        registerUserRef.current.scrollIntoView()
-    }
+    const collapseCheckout = () => dispatch(collapseCheckoutAction());
+
 
     const renderExpandButton = () => {
         if (expand) {
             return (
-                <div onClick={() => setExpand(false)} className={"ShowCollapsedSectionButton"}>
+                <div onClick={collapseCheckout} className={"ShowCollapsedSectionButton"}>
                     <p>Close</p>
                     <ExpandLessIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
                 </div>
             )
         }
         return (
-            <div onClick={() => setExpand(true)} className={"ShowCollapsedSectionButton"}>
+            <div onClick={expandCheckout} className={"ShowCollapsedSectionButton"}>
                 <p>Expand</p>
                 <ExpandMoreIcon style={{marginLeft: 10, color: "#A3ACB9", width: 20, height: 20}}/>
             </div>

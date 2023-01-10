@@ -1,3 +1,5 @@
+import {TipWord} from "../../../components/Keywords";
+
 const response = {
     "id": "sandbox_order_63e5926acb4c41439e975b51cb36d3ef",
     "email": null,
@@ -354,7 +356,11 @@ const attributes = [
             {
                 attribute: "order_items[].price",
                 dataType: "hash",
-                description: "The Price of the Product the User bought, we use the Price instead of the Product because a Product can have multiple prices. For example the same subscription service can cost 5€/monthly or 45€/yearly."
+                description: <>
+                    <p>The Price of the Product the User wants to buy, we use the Price instead of the Product because a Product can have multiple prices. For example the same subscription service can cost 5€ monthly or 45€ yearly.</p>
+                    <br/>
+                    <p style={{fontSize: 14, color: "#4F566B"}}>See more on <TipWord onClick={() => window.open("https://stripe.com/docs/api/prices/object", "_blank")}>Stripe Prices</TipWord> official documentation.</p>
+                </>
             },
         ]
     },

@@ -39,7 +39,7 @@ import {
 import { useSoftUIController } from "context";
 import Switch from "@mui/material/Switch";
 import {useDispatch} from "react-redux";
-import {toogleMode} from "../../redux/actions/ProjectsActions";
+import {toogleMode} from "../../redux/actions/ApiActions";
 
 function SidenavButton({value, ...rest }) {
 

@@ -7,13 +7,14 @@ import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
 import {listResponse, response} from "../data";
 import Divider from "@mui/material/Divider";
+import {useNavigate} from "react-router-dom";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
 const endpoint = "/v1/cart/items"
 
 const CreateCartItem = forwardRef((props, ref) => {
-
+    const navigate = useNavigate();
     const [selectedLanguage, setSelectedLanguage] = useState("Node JS")
 
     const renderGlobalPublicKeyContent = () => {
@@ -50,19 +51,19 @@ const CreateCartItem = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-cart-items-create"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Create cart item</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Creates a Cart Item with the specified <SyntaxText>price_id</SyntaxText> and <SyntaxText>quantity</SyntaxText>.</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>If the User already possesses a Cart Item with the specified <SyntaxText>price_id</SyntaxText>, the API will sum the <SyntaxText>quantity</SyntaxText> of both Cart Items and return the older one.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Creates a Cart Item with the specified <SyntaxText fontSize={12}>price_id</SyntaxText> and <SyntaxText fontSize={12}>quantity</SyntaxText>.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>If the user already possesses a <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord> with the specified <SyntaxText fontSize={12}>price_id</SyntaxText>, the API will sum the <SyntaxText fontSize={12}>quantity</SyntaxText> of both <TipWord onClick={() => navigate("/api#cart-items")}>Cart Items</TipWord> and return the older one.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
                 <Divider/>
                 <p><SyntaxText>price_id</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}>string</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>The Price ID belonging to the Product the User wants to buy, if the User already possesses a Cart Item with the specified <SyntaxText>price_id</SyntaxText>, the API will sum the <SyntaxText>quantity</SyntaxText> of both Cart Items and return the older one.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>The Price ID belonging to the Product the user wants to buy, if the user already possesses a Cart Item with the specified <SyntaxText fontSize={12}>price_id</SyntaxText>, the API will sum the <SyntaxText fontSize={12}>quantity</SyntaxText> of both Cart Items and return the older one.</p>
                 <Divider/>
                 <p><SyntaxText>quantity</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}>integer</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>The amount of units the User wants to purchase from this particular Product.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>The amount of units the user wants to purchase from this particular Product.</p>
                 <br/>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Returns</p>

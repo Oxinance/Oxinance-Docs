@@ -50,7 +50,7 @@ const GetOrder = forwardRef((props, ref) => {
     }
 
     return (
-        <Grid ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-orders-get"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get order</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Retrieves the details of an existing order. Supply the unique order ID and Oxinance will return the corresponding order information.</p>

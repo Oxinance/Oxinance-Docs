@@ -6,7 +6,7 @@ import {TipWord} from "../../components/Keywords";
 
 const ApiReference = ({spacing}) => {
     return (
-            <Grid style={{backgroundColor: "white", borderBottom: "1px solid #E3E8EE", paddingTop: 100, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
+            <Grid id={"api-reference"} style={{backgroundColor: "white", borderBottom: "1px solid #E3E8EE", paddingTop: 100, paddingBottom: 80}} container px={spacing} columnSpacing={10}>
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>API Reference</p>
 

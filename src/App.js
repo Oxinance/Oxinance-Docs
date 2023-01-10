@@ -26,6 +26,7 @@ import routes from "routes";
 import { useSoftUIController } from "context";
 import {ThemeProvider} from "@mui/material";
 import theme from "./assets/theme";
+import {Store} from "./redux/Store";
 
 export default function App() {
   const [controller] = useSoftUIController();
@@ -45,9 +46,11 @@ export default function App() {
   }, [pathname]);
 
   return (
-      <ThemeProvider theme={theme}>
+      <Provider store={Store}>
+        <ThemeProvider theme={theme}>
           <CssBaseline />
           {content}
-      </ThemeProvider>
+        </ThemeProvider>
+      </Provider>
   );
 }

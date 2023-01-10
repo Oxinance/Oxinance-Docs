@@ -1,13 +1,9 @@
 import Sidenav from "./examples/Sidenav";
 import brand from "./assets/images/logo-ct.png";
 import sidebarRoutes from "./sidebar.routes";
-import Configurator from "./examples/Configurator";
-import {setMiniSidenav, setOpenConfigurator, useSoftUIController} from "./context";
-import SoftBox from "./components/SoftBox";
-import Icon from "@mui/material/Icon";
+import {setMiniSidenav, useSoftUIController} from "./context";
 import { Outlet } from 'react-router-dom';
 import {useState} from "react";
-import ProjectCreator from "./examples/ProjectCreator";
 
 const AuthGuardedApp = () => {
 
@@ -30,7 +26,6 @@ const AuthGuardedApp = () => {
             setOnMouseEnter(false);
         }
     };
-
 
     return (
         <>
