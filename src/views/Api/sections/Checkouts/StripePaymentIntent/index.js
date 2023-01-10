@@ -16,7 +16,7 @@ import {Comment, String, TipWord, Token} from "../../../components/Keywords";
 import {useState} from "react";
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
-const endpoint = "/v1/checkout/stripe/payment-intent"
+const endpoint = "/v1/checkouts/stripe/payment-intent"
 
 const StripePaymentIntent = ({spacing}) => {
 
@@ -50,7 +50,7 @@ const StripePaymentIntent = ({spacing}) => {
             )
         } else if (selectedLanguage === "cURL") {
             return (
-                <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/checkout/binance</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String></p>
+                <p style={{color: "#F5FBFF", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/checkouts/binance</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String></p>
             )
         }
     }
