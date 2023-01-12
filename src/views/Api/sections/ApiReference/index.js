@@ -24,7 +24,7 @@ const ApiReference = ({spacing}) => {
                     <p style={{fontSize: 14, color: "#4F566B", marginTop: 10}}>Use <a style={{color: "#556CD6"}}>Oxinance templates</a> and deploy your Shop instantly - no code required.</p>
                     <br/>
                     <Code title={"BASE URL"}>
-                        <p style={{color: "#C1C9D2", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}>https://api.oxinance.com</p>
+                        <p style={{color: "#C1C9D2", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}>https://api.oxinance.com</p>
                     </Code>
                     <div style={{boxShadow: "0 0 0 1px rgba(0,0,0,0.07)", marginTop: 10, borderRadius: 8}}>
                         <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -38,7 +38,7 @@ const ApiReference = ({spacing}) => {
                         </div>
                         <div style={{borderRadius: 12}}>
                             <div style={{backgroundColor: "#eff2f5", borderTop: "1px solid #E3E8EE", padding: "10px 20px 10px 20px", borderBottomRightRadius: 8, borderBottomLeftRadius: 8}}>
-                                <p style={{color: "#697386", fontFamily: "Menlo, Consolas, monospace", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> npm install --save oxinance</p>
+                                <p style={{color: "#697386", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> npm install --save oxinance</p>
                             </div>
                         </div>
                     </div>

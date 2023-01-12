@@ -22,7 +22,7 @@ const ProductObject = ({spacing}) => {
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>The user object</p>
                 <EndpointsCode title={"THE PRODUCT OBJECT"} style={{marginTop: 10}}>
-                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(exampleResponse)}}/>
+                    <pre style={{fontFamily: "JetBrainsMono-Medium", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(exampleResponse)}}/>
                 </EndpointsCode>
             </Grid>
         </Grid>

@@ -19,8 +19,8 @@ const OrderObject = ({spacing}) => {
             </Grid>
             <Grid item xs={12} lg={6}>
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>The user object</p>
-                <EndpointsCode title={"THE USER OBJECT"} style={{marginTop: 10}}>
-                    <pre style={{fontFamily: "Menlo, Consolas, monospace", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(response)}}/>
+                <EndpointsCode title={"THE ORDER OBJECT"} style={{marginTop: 10}}>
+                    <pre style={{ffontFamily: "JetBrainsMono-Medium", color: "#697386", fontSize: 13}} dangerouslySetInnerHTML={{__html: jsonSyntaxHighlight(response)}}/>
                 </EndpointsCode>
             </Grid>
         </Grid>

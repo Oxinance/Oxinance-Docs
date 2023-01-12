@@ -4,6 +4,12 @@ body {
     background-color: white;
 }
 
+@font-face {
+    font-family: "JetBrainsMono-Medium";
+    src: local("JetBrainsMono-Medium"),
+    url("/src/fonts/JetBrainsMono-Medium.ttf") format("truetype");
+}
+
 .ShowCollapsedSectionButton {
     width: fit-content;
     background: #fff;
@@ -58,13 +64,13 @@ body {
 .endpoint-url {
     color: #697386;
     font-size: 13px;
-    font-family: Menlo, Consolas, monospace;
+    font-family: JetBrainsMono-Medium;
 }
 
 .endpoint-url:hover {
     color: #3C4257;
     font-size: 13px;
-    font-family: Menlo, Consolas, monospace;
+    font-family: JetBrainsMono-Medium;
     cursor: pointer;
 }
 
@@ -84,7 +90,6 @@ body {
 }
 
 .syntax-highlighter-hidden-scroll::-webkit-scrollbar {
-    height: 15px;
     display: none;
 }
 
@@ -95,6 +100,37 @@ body {
 
 .syntax-highlighter-hidden-scroll::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 14px 14px #3C4257;
+    border: solid 4px transparent;
+    border-radius: 30px;
+}
+
+.light-syntax-highlighter::-webkit-scrollbar {
+    height: 15px;
+}
+
+.light-syntax-highlighter::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 14px 14px transparent;
+    border: solid 4px transparent;
+}
+
+.light-syntax-highlighter::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 14px 14px #E3E8EE;
+    border: solid 4px transparent;
+    border-radius: 30px;
+}
+
+.light-syntax-highlighter-hidden-scroll::-webkit-scrollbar {
+    height: 15px;
+    display: none;
+}
+
+.light-syntax-highlighter-hidden-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 14px 14px transparent;
+    border: solid 4px transparent;
+}
+
+.light-syntax-highlighter-hidden-scroll::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 14px 14px #E3E8EE;
     border: solid 4px transparent;
     border-radius: 30px;
 }

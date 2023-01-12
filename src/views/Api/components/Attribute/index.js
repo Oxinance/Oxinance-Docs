@@ -44,7 +44,7 @@ const Attribute = ({data, style = {}}) => {
             <Divider/>
             <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <div>
-                    <p><SyntaxText>{data.attribute}</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "monospace", fontSize: 13}}>{data.dataType}</span></p>
+                    <p><SyntaxText>{data.attribute}</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}>{data.dataType}</span></p>
                     <p style={{fontSize: 14, color: "#4F566B", marginBottom: 10}}>{data.description}</p>
                     {data.nested && renderExpandButton()}
                 </div>

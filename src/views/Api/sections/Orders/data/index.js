@@ -1,7 +1,7 @@
 import {TipWord} from "../../../components/Keywords";
 
 const response = {
-    "id": "sandbox_order_63e5926acb4c41439e975b51cb36d3ef",
+    "id": "order_63e5926acb4c41439e975b51cb36d3ef",
     "email": null,
     "tracking_information": {
         "code": "#FFF",

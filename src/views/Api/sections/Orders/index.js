@@ -17,6 +17,7 @@ import GetOrder from "./GetOrder";
 import GetOrders from "./GetOrders";
 import {useDispatch, useSelector} from "react-redux";
 import {expandOrdersAction, collapseOrdersAction} from "../../../../redux/actions/ApiActions";
+import {useNavigate} from "react-router-dom";
 
 const Orders = ({spacing}) => {
 
@@ -24,6 +25,7 @@ const Orders = ({spacing}) => {
     const dispatch = useDispatch();
     const getCurrentUserRef = useRef(null);
     const loginUserRef = useRef(null);
+    const navigate = useNavigate();
 
     const expandOrders = () => dispatch(expandOrdersAction());
 
@@ -81,8 +83,8 @@ const Orders = ({spacing}) => {
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"GET"}>/v1/orders</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Retrieves a specific order"} method={"GET"}>/v1/orders/:id</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#orders/list-orders")} title={"Lists all user orders"} method={"GET"}>/v1/orders</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#orders/get-order")} title={"Retrieves a specific order"} method={"GET"}>/v1/orders/:id</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>

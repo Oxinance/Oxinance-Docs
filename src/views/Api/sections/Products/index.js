@@ -12,6 +12,7 @@ import GetProducts from "./GetProducts";
 import GetProduct from "./GetProduct";
 import {useDispatch, useSelector} from "react-redux";
 import {collapseProductsAction, expandProductsAction} from "../../../../redux/actions/ApiActions";
+import {useNavigate} from "react-router-dom";
 
 
 const Products = ({spacing}) => {
@@ -20,6 +21,7 @@ const Products = ({spacing}) => {
     const dispatch = useDispatch()
     const getProductsRef = useRef(null);
     const getProductRef = useRef(null);
+    const navigate = useNavigate();
 
     const expandProducts = () => dispatch(expandProductsAction());
 
@@ -75,8 +77,8 @@ const Products = ({spacing}) => {
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all products"} method={"GET"}>/v1/products</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Gets product with specified id"} method={"GET"}>/v1/products/:id</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#products/list-products")} title={"Lists all products"} method={"GET"}>/v1/products</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#products/get-product")} title={"Gets product with specified id"} method={"GET"}>/v1/products/:id</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>

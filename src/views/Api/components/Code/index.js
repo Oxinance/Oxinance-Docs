@@ -79,7 +79,7 @@ const Code = ({title, children, showMenu, menuItems, selectedLanguage}) => {
     return (
         <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             {renderMenu()}
-            <div ref={ref} className={isHovered ? "syntax-highlighter" :"syntax-highlighter-hidden-scroll"} style={{paddingBottom: (isHovered && isOverflow) ? 0 : 15, backgroundColor: "#4F566B", padding: "10px 20px 10px 20px", borderBottomRightRadius: 8, borderBottomLeftRadius: 8, overflowX: "auto", whiteSpace: "nowrap"}}>
+            <div ref={ref} className={isHovered ? "syntax-highlighter" :"syntax-highlighter-hidden-scroll"} style={{paddingBottom: (isHovered && isOverflow) ? 0 : 15, backgroundColor: "#4F566B", padding: "10px 20px 15px 20px", borderBottomRightRadius: 8, borderBottomLeftRadius: 8, overflowX: "auto", whiteSpace: "nowrap"}}>
                 {children}
             </div>
         </div>

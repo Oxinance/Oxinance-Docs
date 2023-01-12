@@ -12,12 +12,14 @@ import StripeCheckoutSession from "./StripeCheckoutSession";
 import StripePaymentIntent from "./StripePaymentIntent";
 import {useDispatch, useSelector} from "react-redux";
 import {collapseCheckoutAction, expandCheckoutAction} from "../../../../redux/actions/ApiActions";
+import {useNavigate} from "react-router-dom";
 
 const Checkout = ({spacing}) => {
 
     const expand = useSelector(state => state.api.expandCheckout);
     const dispatch = useDispatch();
     const getCurrentUserRef = useRef(null);
+    const navigate = useNavigate();
 
     const scrollToCurrentUser = () => {
         if (!expand) {
@@ -66,10 +68,10 @@ const Checkout = ({spacing}) => {
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/binance</Endpoint>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/paypal</Endpoint>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/stripe/payment-intent</Endpoint>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all user orders"} method={"POST"}>/v1/checkouts/stripe/checkout-session</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#checkout/binance")} title={"Generates a Binance hosted checkout page URL"} method={"POST"}>/v1/checkouts/binance</Endpoint>
+                        <Endpoint onClick={() => null} title={"Generates a PayPal hosted checkout page URL"} method={"POST"}>/v1/checkouts/paypal</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#checkout/stripe-checkout-session")} title={"Generates a Stripe payment intent"} method={"POST"}>/v1/checkouts/stripe/payment-intent</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#checkout/stripe-payment-intent")} title={"Generates a Stripe hosted checkout page URL"} method={"POST"}>/v1/checkouts/stripe/checkout-session</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>

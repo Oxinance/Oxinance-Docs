@@ -1,4 +1,5 @@
 import AuthGuardedApp from "./AuthGuardedApp";
+import {Navigate} from "react-router-dom";
 
 import Api from "./views/Api";
 
@@ -10,6 +11,7 @@ const routes = [
     ),
     children: [
       { path: "/api", element: <Api /> },
+      { path: "*", element: <Navigate to={"/api"}/>}
     ]
   }
 ]

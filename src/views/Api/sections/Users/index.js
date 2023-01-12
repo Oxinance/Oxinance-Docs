@@ -88,9 +88,9 @@ const Users = ({spacing}) => {
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets current logged-in User"} method={"GET"}>/v1/users/current</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Authenticates an User"} method={"POST"}>/v1/users/login</Endpoint>
-                        <Endpoint onClick={scrollToRegisterUser} title={"Registers an User"} method={"POST"}>/v1/users/register</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#users/current-user")} title={"Gets current logged-in User"} method={"GET"}>/v1/users/current</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#users/login")} title={"Authenticates an User"} method={"POST"}>/v1/users/login</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#users/register")} title={"Registers an User"} method={"POST"}>/v1/users/register</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>

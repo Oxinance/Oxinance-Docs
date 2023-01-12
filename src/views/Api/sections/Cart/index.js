@@ -18,6 +18,7 @@ import DeleteCartItem from "./DeleteCartItem";
 import UpdateCartItem from "./UpdateCartItem";
 import {useDispatch, useSelector} from "react-redux";
 import {collapseCartItemsAction, expandCartItemsAction} from "../../../../redux/actions/ApiActions";
+import {useNavigate} from "react-router-dom";
 
 const CartWord = () => <TipWord title={"Abstraction that refers to a collection of Cart Items"}>Cart</TipWord>
 
@@ -28,6 +29,7 @@ const Cart = ({spacing}) => {
     const getCurrentUserRef = useRef(null);
     const loginUserRef = useRef(null);
     const registerUserRef = useRef(null);
+    const navigate = useNavigate();
 
     const expandCartItems = () => dispatch(expandCartItemsAction());
 
@@ -84,10 +86,10 @@ const Cart = ({spacing}) => {
                 <Grid item xs={12} lg={6}>
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
-                        <Endpoint onClick={scrollToCurrentUser} title={"Gets all items from cart"} method={"GET"}>/v1/cart/items</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Adds new item to cart"} method={"POST"}>/v1/cart/items</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Removes item from cart"} method={"DELETE"}>/v1/cart/items/:id</Endpoint>
-                        <Endpoint onClick={scrollToLoginUser} title={"Changes the quantity of a specific item"} method={"PUT"}>/v1/cart/items/:id/quantity</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#cart-items/list-cart-items")} title={"Gets all items from cart"} method={"GET"}>/v1/cart/items</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#cart-items/create-cart-item")} title={"Adds new item to cart"} method={"POST"}>/v1/cart/items</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#cart-items/delete-cart-item")} title={"Removes item from cart"} method={"DELETE"}>/v1/cart/items/:id</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#cart-items/update-cart-item-quantity")} title={"Changes the quantity of a specific item"} method={"PUT"}>/v1/cart/items/:id/quantity</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>
