@@ -10,6 +10,19 @@ body {
     url("/src/fonts/JetBrainsMono-Medium.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "JetBrainsMono-Italic";
+    src: local("JetBrainsMono-Italic"),
+    url("/src/fonts/JetBrainsMono-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrainsMono-BoldItalic";
+    src: local("JetBrainsMono-BoldItalic"),
+    url("/src/fonts/JetBrainsMono-BoldItalic.ttf") format("truetype");
+}
+
+
 .ShowCollapsedSectionButton {
     width: fit-content;
     background: #fff;

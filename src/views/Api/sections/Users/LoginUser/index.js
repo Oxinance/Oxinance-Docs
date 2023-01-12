@@ -21,13 +21,13 @@ const LoginUser = forwardRef((props, ref) => {
         if (selectedLanguage === "Node JS") {
             return (
                 <>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>1</span> <Token>const</Token> oxinance = require(<String>&quot;oxinance&quot;</String>);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>1</span> <Token>const</Token> oxinance = require(<String>&quot;oxinance&quot;</String>)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>2</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>3</span> oxinance.publicKey = <String>&quot;{examplePublicKey}&quot;</String>;</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>3</span> oxinance<Comment>.</Comment>publicKey = <String>&quot;{examplePublicKey}&quot;</String><Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>4</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> response = <Token>await</Token> oxinance.Users.login(&#123;username: <String>&quot;Jane Doe&quot;</String>, password: <String>&quot;JanePassword&quot;</String>&#125;);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> response = <Token>await</Token> oxinance<Comment>.</Comment>Users<Comment>.</Comment>login(&#123;username: <String>&quot;Jane Doe&quot;</String>, password: <String>&quot;JanePassword&quot;</String>&#125;)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>6</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>7</span> oxinance.authenticationToken = response.data.token;</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>7</span> oxinance<Comment>.</Comment>authenticationToken = response<Comment>.</Comment>data<Comment>.</Comment>token<Comment>;</Comment></p>
                 </>
             )
         }

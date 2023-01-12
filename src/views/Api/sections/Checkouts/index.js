@@ -69,7 +69,7 @@ const Checkout = ({spacing}) => {
                     <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10, opacity: 0}}>Users</p>
                     <EndpointsCode>
                         <Endpoint onClick={() => navigate("/api#checkout/binance")} title={"Generates a Binance hosted checkout page URL"} method={"POST"}>/v1/checkouts/binance</Endpoint>
-                        <Endpoint onClick={() => null} title={"Generates a PayPal hosted checkout page URL"} method={"POST"}>/v1/checkouts/paypal</Endpoint>
+                        <Endpoint onClick={() => null} title={"Coming soon"} method={"POST"}>/v1/checkouts/paypal</Endpoint>
                         <Endpoint onClick={() => navigate("/api#checkout/stripe-checkout-session")} title={"Generates a Stripe payment intent"} method={"POST"}>/v1/checkouts/stripe/payment-intent</Endpoint>
                         <Endpoint onClick={() => navigate("/api#checkout/stripe-payment-intent")} title={"Generates a Stripe hosted checkout page URL"} method={"POST"}>/v1/checkouts/stripe/checkout-session</Endpoint>
                     </EndpointsCode>

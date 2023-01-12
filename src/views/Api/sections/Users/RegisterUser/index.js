@@ -21,13 +21,13 @@ const RegisterUser = forwardRef((props, ref) => {
         if (selectedLanguage === "Node JS") {
             return (
                 <>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>1</span> <Token>const</Token> oxinance = require(<String>&quot;oxinance&quot;</String>);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>1</span> <Token>const</Token> oxinance = require(<String>&quot;oxinance&quot;</String>)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>2</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>3</span> oxinance.publicKey = <String>&quot;{examplePublicKey}&quot;</String>;</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>3</span> oxinance<Comment>.</Comment>publicKey = <String>&quot;{examplePublicKey}&quot;</String><Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>4</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> response = <Token>await</Token> oxinance.Users.register(&#123;username: <String>&quot;Jane Doe&quot;</String>, email: <String>&quot;jane@example.com&quot;</String>, password1: <String>&quot;JanePassword&quot;</String>, password2: <String>&quot;JanePassword&quot;</String>&#125;);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>5</span> <Token>const</Token> response = <Token>await</Token> oxinance<Comment>.</Comment>Users<Comment>.</Comment>register(&#123;username: <String>&quot;Jane Doe&quot;</String>, email: <String>&quot;jane@example.com&quot;</String>, password1: <String>&quot;JanePassword&quot;</String>, password2: <String>&quot;JanePassword&quot;</String>&#125;)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>6</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>7</span> oxinance.authenticationToken = response.data.token;</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>7</span> oxinance<Comment>.</Comment>authenticationToken = response<Comment>.</Comment>data<Comment>.</Comment>token<Comment>;</Comment></p>
                 </>
             )
         }
@@ -39,7 +39,7 @@ const RegisterUser = forwardRef((props, ref) => {
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>3</span> axios.defaults.baseURL = <String>&quot;https://api.oxinance.com&quot;</String>;</p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>4</span> axios.defaults.headers.common[<String>&quot;project-public-key&quot;</String>] = <String>&quot;{examplePublicKey}&quot;</String>;</p>
                     <BlankLine number={5}/>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>6</span><Token> const</Token> token = <Token>await</Token> axios.post(<String>&quot;{endpoint}&quot;</String>, &#123;username: <String>&quot;Jane Doe&quot;</String>, email: <String>&quot;jane@example.com&quot;</String>, password1: <String>&quot;JanePassword&quot;</String>, password2: <String>&quot;JanePassword&quot;</String>&#125;);</p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>6</span><Token> const</Token> token = <Token>await</Token> axios.post(<String>&quot;{endpoint}&quot;</String>, &#123;username: <String>&quot;Jane Doe&quot;</String>, email: <String>&quot;jane@example.com&quot;</String>, password1: <String>&quot;JanePassword&quot;</String>, password2: <String>&quot;JanePassword&quot;</String>&#125;)<Comment>;</Comment></p>
                     <BlankLine number={7}/>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>8</span> <Comment>localStorage.setItem(&quot;token&quot;, token);</Comment></p>
                 </>
