@@ -6,8 +6,8 @@ body {
 
 @font-face {
     font-family: "JetBrainsMono-Medium";
-    src: local("JetBrainsMono-Medium"),
-    url("/src/fonts/JetBrainsMono-Medium.ttf") format("truetype");
+    src: local("JetBrainsMono-Regular"),
+    url("/src/fonts/JetBrainsMono-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -21,7 +21,6 @@ body {
     src: local("JetBrainsMono-BoldItalic"),
     url("/src/fonts/JetBrainsMono-BoldItalic.ttf") format("truetype");
 }
-
 
 .ShowCollapsedSectionButton {
     width: fit-content;
