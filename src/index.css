@@ -6,8 +6,8 @@ body {
 
 @font-face {
     font-family: "JetBrainsMono-Medium";
-    src: local("JetBrainsMono-Thin"),
-    url("/src/fonts/JetBrainsMono-Thin.ttf") format("truetype");
+    src: local("JetBrainsMono-Regular"),
+    url("/src/fonts/JetBrainsMono-Regular.ttf") format("truetype");
 }
 
 @font-face {
