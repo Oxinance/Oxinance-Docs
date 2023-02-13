@@ -25,6 +25,11 @@ const sidebarRoutes = [
                 key: "register",
                 route: "/api#users/register",
             },
+            {
+                name: "Google OAuth 2.0",
+                key: "register",
+                route: "/api#users/oauth/google",
+            },
         ]
     },
     {

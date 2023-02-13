@@ -1,8 +1,6 @@
 import Grid from "@mui/material/Grid";
 import Code from "../../components/Code";
-import SoftBox from "../../../../components/SoftBox";
 import SyntaxText from "../../components/SyntaxText";
-import CodeLine from "../../components/CodeLine";
 import {useState} from "react";
 import {Token, String, Comment, TipWord} from "../../components/Keywords/index";
 
