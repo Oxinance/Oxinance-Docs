@@ -96,6 +96,18 @@ const Api = () => {
                     }, 500)
                 }
                 break;
+            case "#users/oauth/facebook":
+                if (apiState.expandUsers) {
+                    const registerComponent = document.getElementById("api-users-oauth-facebook");
+                    registerComponent.scrollIntoView();
+                } else {
+                    dispatch(expandUsersAction());
+                    setTimeout(() => {
+                        const registerComponent = document.getElementById("api-users-oauth-facebook");
+                        registerComponent.scrollIntoView();
+                    }, 500)
+                }
+                break;
             case "#products/list-products":
                 if (apiState.expandProducts) {
                     const registerComponent = document.getElementById("api-products-list");
@@ -212,6 +224,18 @@ const Api = () => {
                     dispatch(expandCheckoutAction());
                     setTimeout(() => {
                         const registerComponent = document.getElementById("api-checkout-binance");
+                        registerComponent.scrollIntoView();
+                    }, 500)
+                }
+                break
+            case "#checkout/paypal":
+                if (apiState.expandCheckout) {
+                    const registerComponent = document.getElementById("api-checkout-paypal");
+                    registerComponent.scrollIntoView();
+                } else {
+                    dispatch(expandCheckoutAction());
+                    setTimeout(() => {
+                        const registerComponent = document.getElementById("api-checkout-paypal");
                         registerComponent.scrollIntoView();
                     }, 500)
                 }

@@ -30,6 +30,11 @@ const sidebarRoutes = [
                 key: "register",
                 route: "/api#users/oauth/google",
             },
+            {
+                name: "Facebook OAuth 2.0",
+                key: "register",
+                route: "/api#users/oauth/facebook",
+            },
         ]
     },
     {
@@ -108,6 +113,11 @@ const sidebarRoutes = [
                 name: "Binance",
                 key: "binance",
                 route: "/api#checkout/binance"
+            },
+            {
+                name: "PayPal",
+                key: "paypal",
+                route: "/api#checkout/paypal"
             },
             {
                 name: "Stripe checkout session",

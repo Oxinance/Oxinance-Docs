@@ -108,6 +108,20 @@ const binanceAttributes = [
     },
 ]
 
+const paypalCheckoutResponse = {
+    url: "https://www.paypal.com/checkoutnow?token=5O190127TN364715T"
+}
+
+const paypalCheckoutParameters = binanceParameters
+
+const paypalCheckoutAttributes = [
+    {
+        attribute: "url",
+        dataType: "string",
+        description: "PayPal hosted checkout page URL. Redirect customers to this URL to take them to checkout."
+    },
+]
+
 const stripeCheckoutResponse = {
     url: "https://checkout.stripe.com/c/pay/cs_test_a1EzMDwTHAK2PkWqfxIoKqE550pbNFQJkGBrJG5qR652xoTjmiMD2dCRXo#fidkdWxOYHwnPyd1blpxYHZxWjA0SD1Td2JHNzBtS0J1aXZIbmM0UFB%2FbG1Abk8xRkJsbXJBQzdJM2A8U3dcdjBkMlxHMmY8MzZQaUhCS1ZkTG1vfTdBRjJLa1BqXE1LUlw1TzZHM108Mmg1NTVfczFKVG1JZycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYCkndnF3bHVgRGZmanBrcSc%2FJ2RmZnFaNEg9czdXVVBzNGRuQHQwcSd4JSUl"
 }
@@ -118,7 +132,7 @@ const stripeCheckoutAttributes = [
     {
         attribute: "url",
         dataType: "string",
-        description: "Stripe hosted checkout page URL. Redirect customers to this URL to take them to Checkouts."
+        description: "Stripe hosted checkout page URL. Redirect customers to this URL to take them to checkout."
     },
 ]
 
@@ -138,4 +152,16 @@ const stripePaymentIntentAttributes = [
     },
 ]
 
-export { binanceResponse, binanceParameters, binanceAttributes, stripeCheckoutAttributes, stripeCheckoutResponse, stripeCheckoutParameters, stripePaymentIntentResponse, stripePaymentIntentAttributes }
+export {
+    binanceResponse,
+    binanceParameters,
+    binanceAttributes,
+    paypalCheckoutResponse,
+    paypalCheckoutParameters,
+    paypalCheckoutAttributes,
+    stripeCheckoutAttributes,
+    stripeCheckoutResponse,
+    stripeCheckoutParameters,
+    stripePaymentIntentResponse,
+    stripePaymentIntentAttributes
+}
