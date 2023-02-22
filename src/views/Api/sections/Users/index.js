@@ -17,6 +17,7 @@ import {collapseUsersAction, expandUsersAction} from "../../../../redux/actions/
 import {useNavigate} from "react-router-dom";
 import GoogleOAuth from "./GoogleOAuth";
 import FacebookOAuth from "./FacebookOAuth";
+import MicrosoftOAuth from "./MicrosoftOAuth";
 
 const Users = ({spacing}) => {
 
@@ -95,6 +96,7 @@ const Users = ({spacing}) => {
                         <Endpoint onClick={() => navigate("/api#users/register")} title={"Registers an User"} method={"POST"}>/v1/users/register</Endpoint>
                         <Endpoint onClick={() => navigate("/api#users/oauth/google")} title={"Authenticates an User with Google"} method={"POST"}>/v1/users/oauth/google</Endpoint>
                         <Endpoint onClick={() => navigate("/api#users/oauth/facebook")} title={"Authenticates an User with Facebook"} method={"POST"}>/v1/users/oauth/facebook</Endpoint>
+                        <Endpoint onClick={() => navigate("/api#users/oauth/microsoft")} title={"Authenticates an User with Microsoft"} method={"POST"}>/v1/users/oauth/microsoft</Endpoint>
                     </EndpointsCode>
                 </Grid>
             </Grid>
@@ -111,6 +113,8 @@ const Users = ({spacing}) => {
                     <GoogleOAuth spacing={spacing}/>
                     <Divider/>
                     <FacebookOAuth spacing={spacing}/>
+                    <Divider/>
+                    <MicrosoftOAuth spacing={spacing}/>
             </Collapsible>
             <Grid style={{backgroundColor: expand ? "white" : "#F7FAFC", borderBottom: "1px solid #E3E8EE", paddingBottom: 100}} container>
                 <Grid style={{margin: "auto"}} item sx={12}>

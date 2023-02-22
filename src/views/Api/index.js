@@ -108,6 +108,18 @@ const Api = () => {
                     }, 500)
                 }
                 break;
+            case "#users/oauth/microsoft":
+                if (apiState.expandUsers) {
+                    const registerComponent = document.getElementById("api-users-oauth-microsoft");
+                    registerComponent.scrollIntoView();
+                } else {
+                    dispatch(expandUsersAction());
+                    setTimeout(() => {
+                        const registerComponent = document.getElementById("api-users-oauth-microsoft");
+                        registerComponent.scrollIntoView();
+                    }, 500)
+                }
+                break;
             case "#products/list-products":
                 if (apiState.expandProducts) {
                     const registerComponent = document.getElementById("api-products-list");

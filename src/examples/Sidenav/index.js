@@ -250,6 +250,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           </SoftBox>
         </SoftBox>
       </SoftBox>
+        <Divider/>
       <List>
           {renderRoutes}
       </List>
