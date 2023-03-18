@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import {BlankLine, Comment, String, TipWord, Token} from "../../../components/Keywords";
+import {BlankLine, Comment, String, Token} from "../../../components/Keywords";
 import SyntaxText from "../../../components/SyntaxText";
 import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
@@ -10,9 +10,9 @@ import Divider from "@mui/material/Divider";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
-const endpoint = "/v1/users/oauth/microsoft"
+const endpoint = "/v1/users/oauth/apple"
 
-const MicrosoftOAuth = forwardRef((props, ref) => {
+const AppleOAuth = forwardRef((props, ref) => {
 
     const [selectedLanguage, setSelectedLanguage] = useState("Node JS")
 
@@ -28,7 +28,7 @@ const MicrosoftOAuth = forwardRef((props, ref) => {
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>5</span>&nbsp; <Token>const</Token> urlParams = <Token>new</Token> URLSearchParams(window<Comment>.</Comment>location<Comment>.</Comment>search)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>6</span>&nbsp; <Token>const</Token> code = urlParams<Comment>.</Comment>get(<String>&quot;code&quot;</String>)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>7</span></p>
-                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>8</span>&nbsp; <Token>const</Token> response = <Token>await</Token> oxinance<Comment>.</Comment>Users<Comment>.</Comment>authenticateWithMicrosoft(code)<Comment>;</Comment></p>
+                    <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>8</span>&nbsp; <Token>const</Token> response = <Token>await</Token> oxinance<Comment>.</Comment>Users<Comment>.</Comment>authenticateWithApple(code)<Comment>;</Comment></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>9</span></p>
                     <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#697386"}}>10</span>&nbsp;oxinance<Comment>.</Comment>authenticationToken = response<Comment>.</Comment>data<Comment>.</Comment>token<Comment>;</Comment></p>
                 </>
@@ -52,16 +52,16 @@ const MicrosoftOAuth = forwardRef((props, ref) => {
             )
         } else if (selectedLanguage === "cURL") {
             return (
-                <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>https://api.oxinance.com/v1/users/oauth/microsoft</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String>  \ <br/>&nbsp;&nbsp;-d code=<String>&quot;mock_oauth_code_abcdefghijklmnopqrstuvwxyz&quot;</String></p>
+                <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>https://api.oxinance.com/v1/users/oauth/apple</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String> \ <br/> &nbsp;&nbsp;-H <String>&quot;project-authorization: <String>{exampleAuthToken}</String>&quot;</String>  \ <br/>&nbsp;&nbsp;-d code=<String>&quot;mock_oauth_code_abcdefghijklmnopqrstuvwxyz&quot;</String></p>
             )
         }
     }
 
     return (
-        <Grid id={"api-users-oauth-microsoft"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
+        <Grid id={"api-users-oauth-apple"} ref={ref} style={{backgroundColor: "white", paddingTop: 80, paddingBottom: 80}} container px={props.spacing} columnSpacing={10}>
             <Grid item xs={12} lg={6}>
-                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>OAuth 2.0 with Microsoft</p>
-                <p style={{fontSize: 14, color: "#4F566B"}}>Logs in or registers a user with Microsoft and returns user&apos;s authentication token which can be used to authenticate future requests.</p>
+                <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>OAuth 2.0 with Apple</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>Logs in or registers a user with Apple and returns user&apos;s authentication token which can be used to authenticate future requests.</p>
                 <br/>
                 <p style={{fontSize: 12, color: "#4F566B"}}>Every time a user logs in successfully his <SyntaxText fontSize={12}>last_login</SyntaxText> property is updated.</p>
                 <br/>
@@ -76,7 +76,7 @@ const MicrosoftOAuth = forwardRef((props, ref) => {
                 <br/>
                 <Divider/>
                 <br/>
-                <p style={{fontSize: 14, color: "#4F566B"}}>In case a User registers using <SyntaxText>/v1/users/register</SyntaxText> endpoint and then tries to login with Microsoft using same email, Oxinance API will link the existing account to the Microsoft account and the User will be able to perform authentication from <SyntaxText>/v1/users/login</SyntaxText> endpoint and <SyntaxText>/v1/users/oauth/microsoft</SyntaxText> endpoint, allowing basic and modern authentication for that User.</p>
+                <p style={{fontSize: 14, color: "#4F566B"}}>In case a User registers using <SyntaxText>/v1/users/register</SyntaxText> endpoint and then tries to login with Apple using same email, Oxinance API will link the existing account to the Apple account and the User will be able to perform authentication from <SyntaxText>/v1/users/login</SyntaxText> endpoint and <SyntaxText>/v1/users/oauth/apple</SyntaxText> endpoint, allowing basic and modern authentication for that User.</p>
                 <br/>
                 <p style={{fontSize: 16, color: "#4F566B"}}>Returns</p>
                 <Divider/>
@@ -105,4 +105,4 @@ const MicrosoftOAuth = forwardRef((props, ref) => {
     )
 })
 
-export default MicrosoftOAuth;
+export default AppleOAuth;

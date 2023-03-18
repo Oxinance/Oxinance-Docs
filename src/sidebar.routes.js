@@ -39,6 +39,11 @@ const sidebarRoutes = [
                 name: "Microsoft OAuth 2.0",
                 key: "register",
                 route: "/api#users/oauth/microsoft",
+            },
+            {
+                name: "Apple OAuth 2.0",
+                key: "register",
+                route: "/api#users/oauth/apple",
             }
         ]
     },
