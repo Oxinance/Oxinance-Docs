@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import SoftBox from "components/SoftBox";
+import OxiBox from "components/OxiBox";
 import { useSoftUIController, setLayout } from "context";
 
 function DashboardLayout({ children }) {
@@ -14,7 +14,7 @@ function DashboardLayout({ children }) {
   }, [pathname]);
 
   return (
-        <SoftBox
+        <OxiBox
             sx={({ breakpoints, transitions, functions: { pxToRem } }) => ({
                 position: "relative",
                 [breakpoints.up("xl")]: {
@@ -27,7 +27,7 @@ function DashboardLayout({ children }) {
             })}
         >
             {children}
-        </SoftBox>
+        </OxiBox>
   );
 }
 

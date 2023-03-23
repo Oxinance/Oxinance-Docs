@@ -4,7 +4,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
-import SoftBox from "components/SoftBox";
+import OxiBox from "components/OxiBox";
 import {
   collapseItem,
   collapseIconBox,
@@ -21,7 +21,7 @@ function SidenavCollapse({ icon, name, children, active, noCollapse, open, ...re
   return (
     <>
       <ListItem component="li">
-        <SoftBox {...rest} sx={(theme) => collapseItem(theme, { active, transparentSidenav })}>
+        <OxiBox {...rest} sx={(theme) => collapseItem(theme, { active, transparentSidenav })}>
           <ListItemIcon
             sx={(theme) => collapseIconBox(theme, { active, transparentSidenav, sidenavColor })}
           >
@@ -44,7 +44,7 @@ function SidenavCollapse({ icon, name, children, active, noCollapse, open, ...re
           >
             expand_less
           </Icon>
-        </SoftBox>
+        </OxiBox>
       </ListItem>
       {children && (
         <Collapse in={open} unmountOnExit>

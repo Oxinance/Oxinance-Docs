@@ -5,7 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
 
 // Soft UI Dashboard PRO React components
-import SoftBox from "components/SoftBox";
+import OxiBox from "components/OxiBox";
 
 // Custom styles for the SidenavItem
 import { item, itemContent, itemArrow } from "examples/Sidenav/styles/sidenavItem";
@@ -20,7 +20,7 @@ function SidenavItem({ name, active, nested, children, open, ...rest }) {
   return (
     <>
       <ListItem {...rest} component="li" sx={item}>
-        <SoftBox sx={(theme) => itemContent(theme, { active, miniSidenav, name, nested })}>
+        <OxiBox sx={(theme) => itemContent(theme, { active, miniSidenav, name, nested })}>
 
           <ListItemText primary={name} />
           {children && (
@@ -28,7 +28,7 @@ function SidenavItem({ name, active, nested, children, open, ...rest }) {
               expand_less
             </Icon>
           )}
-        </SoftBox>
+        </OxiBox>
       </ListItem>
       {children && (
         <Collapse in={open} timeout="auto" unmountOnExit>

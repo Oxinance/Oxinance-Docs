@@ -1,42 +1,23 @@
-/**
-=========================================================
-* Soft UI Dashboard PRO React - v4.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { forwardRef } from "react";
-
-// prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
-// Custom styles for SoftTypography
-import SoftTypographyRoot from "components/SoftTypography/SoftTypographyRoot";
+import OxiTypographyRoot from "components/OxiTypography/OxiTypographyRoot";
 
 const SoftTypography = forwardRef(
   (
     { color, fontWeight, textTransform, verticalAlign, textGradient, opacity, children, ...rest },
     ref
   ) => (
-    <SoftTypographyRoot
+    <OxiTypographyRoot
       {...rest}
       ref={ref}
       ownerState={{ color, textTransform, verticalAlign, fontWeight, opacity, textGradient }}
     >
       {children}
-    </SoftTypographyRoot>
+    </OxiTypographyRoot>
   )
 );
 
-// Setting default values for the props of SoftTypography
+// Setting default values for the props of OxiTypography
 SoftTypography.defaultProps = {
   color: "dark",
   fontWeight: false,
@@ -46,7 +27,7 @@ SoftTypography.defaultProps = {
   opacity: 1,
 };
 
-// Typechecking props for the SoftTypography
+// Typechecking props for the OxiTypography
 SoftTypography.propTypes = {
   color: PropTypes.oneOf([
     "inherit",
