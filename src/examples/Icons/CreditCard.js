@@ -1,22 +1,4 @@
-/**
-=========================================================
-* Soft UI Dashboard PRO React - v4.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
-
-// Soft UI Dashboard PRO React base styles
 import colors from "assets/theme/base/colors";
 
 function CreditCard({ color, size }) {
@@ -53,13 +35,11 @@ function CreditCard({ color, size }) {
   );
 }
 
-// Setting default values for the props of CreditCard
 CreditCard.defaultProps = {
   color: "dark",
   size: "16px",
 };
 
-// Typechecking props for the CreditCard
 CreditCard.propTypes = {
   color: PropTypes.oneOf([
     "primary",

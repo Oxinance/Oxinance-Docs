@@ -1,5 +1,4 @@
 import Sidenav from "./examples/Sidenav";
-import brand from "./assets/images/logo-ct.png";
 import sidebarRoutes from "./sidebar.routes";
 import {setMiniSidenav, useSoftUIController} from "./context";
 import { Outlet } from 'react-router-dom';
@@ -31,7 +30,6 @@ const AuthGuardedApp = () => {
         <>
             <Sidenav
                 color={sidenavColor}
-                brand={brand}
                 brandName="Soft UI Dashboard PRO"
                 routes={sidebarRoutes}
                 onMouseEnter={handleOnMouseEnter}
