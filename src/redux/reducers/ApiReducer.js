@@ -1,5 +1,3 @@
-import {CHANGE_DEVELOPMENT_MODE, SET_PROJECTS, SET_SELECTED_PROJECT} from "../actions/ApiActions";
-
 const initialState = {
     expandUsers: false,
     expandProducts: false,

@@ -1,8 +1,3 @@
-export const SET_PROJECTS = "SET_PROJECTS";
-export const SET_SELECTED_PROJECT = "SET_SELECTED_PROJECT";
-export const CHANGE_DEVELOPMENT_MODE = "CHANGE_DEVELOPMENT_MODE";
-
-
 export const expandUsersAction = () => {
     return async (dispatch, getState) => {
         const state = getState();
