@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import OxiBox from "components/OxiBox";
-import { useSoftUIController, setLayout } from "context";
+import { useOxiUIController, setLayout } from "context";
 
 function DashboardLayout({ children }) {
-  const [controller, dispatch] = useSoftUIController();
+  const [controller, dispatch] = useOxiUIController();
   const { miniSidenav } = controller;
   const { pathname } = useLocation();
 

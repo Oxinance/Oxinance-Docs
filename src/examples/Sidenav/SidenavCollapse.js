@@ -12,10 +12,10 @@ import {
   collapseText,
   collapseArrow,
 } from "examples/Sidenav/styles/sidenavCollapse";
-import { useSoftUIController } from "context";
+import { useOxiUIController } from "context";
 
 function SidenavCollapse({ icon, name, children, active, noCollapse, open, ...rest }) {
-  const [controller] = useSoftUIController();
+  const [controller] = useOxiUIController();
   const { miniSidenav, transparentSidenav, sidenavColor } = controller;
 
   return (

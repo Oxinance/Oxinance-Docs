@@ -1,13 +1,13 @@
 import Sidenav from "./examples/Sidenav";
 import sidebarRoutes from "./sidebar.routes";
-import {setMiniSidenav, useSoftUIController} from "./context";
+import {setMiniSidenav, useOxiUIController} from "./context";
 import { Outlet } from 'react-router-dom';
 import {useState} from "react";
 
-const AuthGuardedApp = () => {
+const OutletApp = () => {
 
 
-    const [controller, softDispatch] = useSoftUIController();
+    const [controller, softDispatch] = useOxiUIController();
     const [onMouseEnter, setOnMouseEnter] = useState(false);
     const { miniSidenav, sidenavColor } = controller;
 
@@ -40,4 +40,4 @@ const AuthGuardedApp = () => {
     )
 }
 
-export default AuthGuardedApp;
+export default OutletApp;

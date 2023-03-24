@@ -12,13 +12,13 @@ import SidenavList from "examples/Sidenav/SidenavList";
 import SidenavItem from "examples/Sidenav/SidenavItem";
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
-import { useSoftUIController, setMiniSidenav } from "context";
+import { useOxiUIController, setMiniSidenav } from "context";
 
 function Sidenav({ color, brandName, routes, ...rest }) {
 
     const [openCollapse, setOpenCollapse] = useState(false);
     const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
-    const [controller, softDispatch] = useSoftUIController();
+    const [controller, softDispatch] = useOxiUIController();
     const { miniSidenav, transparentSidenav } = controller;
     const location = useLocation();
     const { pathname } = location;

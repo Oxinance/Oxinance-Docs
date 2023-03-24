@@ -3,13 +3,13 @@ import { useRoutes, useLocation } from "react-router-dom";
 import {Provider} from "react-redux";
 import CssBaseline from "@mui/material/CssBaseline";
 import routes from "routes";
-import { useSoftUIController } from "context";
+import { useOxiUIController } from "context";
 import {ThemeProvider} from "@mui/material";
 import theme from "./assets/theme";
 import {Store} from "./redux/Store";
 
 export default function App() {
-  const [controller] = useSoftUIController();
+  const [controller] = useOxiUIController();
   const { direction } = controller;
   const { pathname } = useLocation();
   const content = useRoutes(routes);

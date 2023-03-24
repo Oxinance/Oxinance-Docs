@@ -1,5 +1,5 @@
 import Grid from "@mui/material/Grid";
-import {Comment, String, TipWord, Token} from "../../../components/Keywords";
+import {Comment, String, Token} from "../../../components/Keywords";
 import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";

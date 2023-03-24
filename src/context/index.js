@@ -4,10 +4,10 @@ import { createContext, useContext, useReducer, useMemo } from "react";
 import PropTypes from "prop-types";
 
 // The Soft UI Dashboard PRO React main context
-const SoftUI = createContext(null);
+const OxiUI = createContext(null);
 
 // Setting custom name for the context which is visible on react dev tools
-SoftUI.displayName = "SoftUIContext";
+OxiUI.displayName = "SoftUIContext";
 
 // Soft UI Dashboard PRO React reducer
 function reducer(state, action) {
@@ -46,7 +46,7 @@ function reducer(state, action) {
 }
 
 // Soft UI Dashboard PRO React context provider
-function SoftUIControllerProvider({ children }) {
+function OxiUIControllerProvider({ children }) {
   const initialState = {
     miniSidenav: false,
     transparentSidenav: false,
@@ -63,46 +63,32 @@ function SoftUIControllerProvider({ children }) {
 
   const value = useMemo(() => [controller, dispatch], [controller, dispatch]);
 
-  return <SoftUI.Provider value={value}>{children}</SoftUI.Provider>;
+  return <OxiUI.Provider value={value}>{children}</OxiUI.Provider>;
 }
 
 // Soft UI Dashboard PRO React custom hook for using context
-function useSoftUIController() {
-  const context = useContext(SoftUI);
+function useOxiUIController() {
+  const context = useContext(OxiUI);
 
   if (!context) {
-    throw new Error("useSoftUIController should be used inside the SoftUIControllerProvider.");
+    throw new Error("useOxiUIController should be used inside the OxiUIControllerProvider.");
   }
 
   return context;
 }
 
 // Typechecking props for the SoftUIControllerProvider
-SoftUIControllerProvider.propTypes = {
+OxiUIControllerProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 // Context module functions
 const setMiniSidenav = (dispatch, value) => dispatch({ type: "MINI_SIDENAV", value });
-const setTransparentSidenav = (dispatch, value) => dispatch({ type: "TRANSPARENT_SIDENAV", value });
-const setSidenavColor = (dispatch, value) => dispatch({ type: "SIDENAV_COLOR", value });
-const setTransparentNavbar = (dispatch, value) => dispatch({ type: "TRANSPARENT_NAVBAR", value });
-const setFixedNavbar = (dispatch, value) => dispatch({ type: "FIXED_NAVBAR", value });
-const setOpenConfigurator = (dispatch, value) => dispatch({ type: "OPEN_CONFIGURATOR", value });
-const setOpenProjectCreator = (dispatch, value) => dispatch({ type: "OPEN_PROJECT_CREATOR", value });
-const setDirection = (dispatch, value) => dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 
 export {
-  SoftUIControllerProvider,
-  useSoftUIController,
+  OxiUIControllerProvider,
+  useOxiUIController,
   setMiniSidenav,
-  setTransparentSidenav,
-  setSidenavColor,
-  setTransparentNavbar,
-  setFixedNavbar,
-  setOpenConfigurator,
-    setOpenProjectCreator,
-  setDirection,
   setLayout,
 };

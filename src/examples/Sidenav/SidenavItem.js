@@ -11,10 +11,10 @@ import OxiBox from "components/OxiBox";
 import { item, itemContent, itemArrow } from "examples/Sidenav/styles/sidenavItem";
 
 // Soft UI Dashboard PRO React contexts
-import { useSoftUIController } from "context";
+import { useOxiUIController } from "context";
 
 function SidenavItem({ name, active, nested, children, open, ...rest }) {
-  const [controller] = useSoftUIController();
+  const [controller] = useOxiUIController();
   const { miniSidenav } = controller;
 
   return (

@@ -1,6 +1,6 @@
 {
-  "short_name": "Soft UI Dashboard",
-  "name": "Soft UI Dashboard PRO React",
+  "short_name": "Oxinance API",
+  "name": "Oxinance API Reference",
   "icons": [
     {
       "src": "favicon.png",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#17c1e8",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }

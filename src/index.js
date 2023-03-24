@@ -6,14 +6,14 @@ import './fonts/JetBrainsMono-Medium.ttf'
 import './fonts/JetBrainsMono-Italic.ttf'
 import "./index.css"
 
-import { SoftUIControllerProvider } from "context";
+import { OxiUIControllerProvider } from "context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
-    <SoftUIControllerProvider>
+    <OxiUIControllerProvider>
             <App />
-    </SoftUIControllerProvider>
+    </OxiUIControllerProvider>
   </BrowserRouter>
 );

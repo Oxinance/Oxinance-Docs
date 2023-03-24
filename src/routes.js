@@ -1,4 +1,4 @@
-import AuthGuardedApp from "./AuthGuardedApp";
+import OutletApp from "./OutletApp";
 import {Navigate} from "react-router-dom";
 
 import Api from "./views/Api";
@@ -7,7 +7,7 @@ import Api from "./views/Api";
 const routes = [
   {
     element: (
-          <AuthGuardedApp/>
+          <OutletApp/>
     ),
     children: [
       { path: "/api", element: <Api /> },
