@@ -1,6 +1,5 @@
 import SyntaxText from "../SyntaxText";
 import {Divider} from "@mui/material";
-import {attributes} from "../../sections/Users/data";
 import Collapsible from "../../sections/Users/Collapsible";
 import {useState} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";

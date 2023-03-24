@@ -2,13 +2,10 @@ import Grid from "@mui/material/Grid";
 import EndpointsCode from "../../../components/EndpointsCode";
 import Divider from "@mui/material/Divider";
 import Attribute from "../../../components/Attribute";
-import SyntaxText from "../../../components/SyntaxText";
 import {
     paypalCheckoutAttributes,
-    paypalCheckoutParameters, paypalCheckoutResponse,
-    stripeCheckoutAttributes,
-    stripeCheckoutParameters,
-    stripeCheckoutResponse
+    paypalCheckoutParameters,
+    paypalCheckoutResponse,
 } from "../data";
 import {jsonSyntaxHighlight} from "../../Users/utils";
 import Parameter from "../../../components/Parameter";

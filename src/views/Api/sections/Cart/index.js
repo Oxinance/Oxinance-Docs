@@ -1,16 +1,12 @@
 import Grid from "@mui/material/Grid";
 import {TipWord} from "../../components/Keywords";
-import SyntaxText from "../../components/SyntaxText";
 import EndpointsCode from "../../components/EndpointsCode";
 import Endpoint from "../../components/Endpoint";
 import {Divider} from "@mui/material";
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Collapsible from "../Users/Collapsible";
-import GetCurrentUser from "../Users/GetCurrentUser";
-import RegisterUser from "../Users/RegisterUser";
-import LoginUser from "../Users/LoginUser";
 import CartItemObject from "./CartItemObject";
 import GetCartItems from "./GetCartItems";
 import CreateCartItem from "./CreateCartItem";

@@ -2,11 +2,9 @@ import Grid from "@mui/material/Grid";
 import EndpointsCode from "../../../components/EndpointsCode";
 import Divider from "@mui/material/Divider";
 import Attribute from "../../../components/Attribute";
-import SyntaxText from "../../../components/SyntaxText";
 import {
-    stripeCheckoutAttributes,
     stripeCheckoutParameters,
-    stripeCheckoutResponse, stripePaymentIntentAttributes,
+    stripePaymentIntentAttributes,
     stripePaymentIntentResponse
 } from "../data";
 import {jsonSyntaxHighlight} from "../../Users/utils";

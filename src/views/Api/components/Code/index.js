@@ -3,7 +3,6 @@ import MenuItem from "@mui/material/MenuItem";
 import {useLayoutEffect, useRef, useState} from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from "@mui/material/IconButton";
-import Endpoint from "../Endpoint";
 
 const useIsOverflow = (ref, callback) => {
     const [isOverflow, setIsOverflow] = useState(undefined);

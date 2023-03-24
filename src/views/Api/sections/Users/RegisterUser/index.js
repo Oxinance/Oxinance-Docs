@@ -1,11 +1,11 @@
 import Grid from "@mui/material/Grid";
-import {BlankLine, Comment, String, TipWord, Token} from "../../../components/Keywords";
+import {BlankLine, Comment, String, Token} from "../../../components/Keywords";
 import SyntaxText from "../../../components/SyntaxText";
 import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../utils";
-import {loginResponse, response} from "../data";
+import {loginResponse} from "../data";
 import Divider from "@mui/material/Divider";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"

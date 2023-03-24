@@ -1,15 +1,13 @@
 import Grid from "@mui/material/Grid";
-import {Comment, String, TipWord, Token} from "../../../components/Keywords";
-import SyntaxText from "../../../components/SyntaxText";
+import {Comment, String, Token} from "../../../components/Keywords";
 import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
-import {exampleArrayResponse, exampleResponse} from "../data";
+import {exampleArrayResponse} from "../data";
 import Divider from "@mui/material/Divider";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
-const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
 const endpoint = "/v1/products"
 
 const GetProducts = forwardRef((props, ref) => {

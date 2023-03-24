@@ -1,8 +1,6 @@
 import Grid from "@mui/material/Grid";
 import EndpointsCode from "../../../components/EndpointsCode";
-import Divider from "@mui/material/Divider";
 import Attribute from "../../../components/Attribute";
-import SyntaxText from "../../../components/SyntaxText";
 import {attributes, response} from "../data";
 import {jsonSyntaxHighlight} from "../../Users/utils";
 

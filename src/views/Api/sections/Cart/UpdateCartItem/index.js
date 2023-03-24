@@ -5,7 +5,7 @@ import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
-import {listResponse, response} from "../data";
+import {response} from "../data";
 import Divider from "@mui/material/Divider";
 
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"

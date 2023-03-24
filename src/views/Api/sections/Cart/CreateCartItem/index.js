@@ -5,7 +5,7 @@ import {useState, forwardRef} from "react";
 import Code from "../../../components/Code";
 import EndpointsCode from "../../../components/EndpointsCode";
 import {jsonSyntaxHighlight} from "../../Users/utils";
-import {listResponse, response} from "../data";
+import {response} from "../data";
 import Divider from "@mui/material/Divider";
 import {useNavigate} from "react-router-dom";
 

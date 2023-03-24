@@ -1,4 +1,3 @@
-import OxiBox from "../../../../components/OxiBox";
 import Grid from "@mui/material/Grid";
 import Code from "../../components/Code";
 import {TipWord} from "../../components/Keywords";

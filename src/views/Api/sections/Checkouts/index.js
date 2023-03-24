@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid";
 import {TipWord} from "../../components/Keywords";
 import EndpointsCode from "../../components/EndpointsCode";
 import Endpoint from "../../components/Endpoint";
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import Collapsible from "../Users/Collapsible";
