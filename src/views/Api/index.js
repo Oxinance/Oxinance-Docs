@@ -10,12 +10,13 @@ import Checkout from "./sections/Checkouts";
 import {useLocation} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {
-    collapseAll,
+    collapseAll, expandAlgoliaAction,
     expandCartItemsAction, expandCheckoutAction,
     expandOrdersAction,
     expandProductsAction,
     expandUsersAction
 } from "../../redux/actions/ApiActions";
+import Algolia from "./sections/Algolia";
 
 const Api = () => {
 
@@ -288,6 +289,17 @@ const Api = () => {
                     }, 500)
                 }
                 break
+            case "#algolia/search":
+                if (apiState.expandAlgolia) {
+                    const registerComponent = document.getElementById("api-algolia-search");
+                    registerComponent.scrollIntoView();
+                } else {
+                    dispatch(expandAlgoliaAction());
+                    setTimeout(() => {
+                        const registerComponent = document.getElementById("api-algolia-search");
+                        registerComponent.scrollIntoView();
+                    }, 500)
+                }
         }
     }, [location])
 
@@ -304,6 +316,9 @@ const Api = () => {
                 <Cart spacing={spacing}/>
             </div>
             <Checkout spacing={spacing}/>
+            <div id={"algolia"}>
+                <Algolia spacing={spacing}/>
+            </div>
         </DashboardLayout>
     )
 }

@@ -108,6 +108,30 @@ export const collapseCheckoutAction = () => {
     }
 }
 
+export const expandAlgoliaAction = () => {
+    return async (dispatch, getState) => {
+        const state = getState();
+        const payload = {...state.api, expandAlgolia: true}
+        dispatch({
+            type: "EXPAND_ALGOLIA",
+            payload: payload
+        })
+    }
+}
+
+export const collapseAlgoliaAction = () => {
+    return async (dispatch, getState) => {
+        const state = getState();
+        const payload = {...state.api, expandAlgolia: false}
+        dispatch({
+            type: "COLLAPSE_ALGOLIA",
+            payload: payload
+        })
+    }
+}
+
+
+
 export const collapseAll = () => {
     return async (dispatch, getState) => {
         dispatch({

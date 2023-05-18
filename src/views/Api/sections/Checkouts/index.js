@@ -19,18 +19,7 @@ const Checkout = ({spacing}) => {
 
     const expand = useSelector(state => state.api.expandCheckout);
     const dispatch = useDispatch();
-    const getCurrentUserRef = useRef(null);
     const navigate = useNavigate();
-
-    const scrollToCurrentUser = () => {
-        if (!expand) {
-            expandCheckout()
-            setTimeout(() => {
-                getCurrentUserRef.current.scrollIntoView()
-            }, 500)
-        }
-        getCurrentUserRef.current.scrollIntoView()
-    }
 
     const expandCheckout = () => dispatch(expandCheckoutAction());
 

@@ -2,6 +2,7 @@ import CreditCard from "./examples/Icons/CreditCard";
 import PersonIcon from '@mui/icons-material/Person';
 import SellIcon from '@mui/icons-material/Sell';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Algolia from "./examples/Icons/Algolia";
 
 const sidebarRoutes = [
     {
@@ -116,7 +117,7 @@ const sidebarRoutes = [
     {
         type: "collapse",
         name: "Checkouts",
-        key: "payments  ",
+        key: "payments",
         icon: <CreditCard size="16px" />,
         collapse: [
             {
@@ -138,6 +139,19 @@ const sidebarRoutes = [
                 name: "Stripe payment intent",
                 key: "stripe-payment-intent",
                 route: "/api#checkout/stripe-payment-intent"
+            },
+        ]
+    },
+    {
+        type: "collapse",
+        name: "Algolia",
+        key: "algolia",
+        icon: <Algolia size="16px" />,
+        collapse: [
+            {
+                name: "Search",
+                key: "search",
+                route: "/api#algolia/search"
             },
         ]
     },

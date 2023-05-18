@@ -3,7 +3,8 @@ const initialState = {
     expandProducts: false,
     expandOrders: false,
     expandCartItems: false,
-    expandCheckout: false
+    expandCheckout: false,
+    expandAlgolia: false,
 }
 
 const ApiReducer = function (state = initialState, action) {
@@ -27,6 +28,10 @@ const ApiReducer = function (state = initialState, action) {
         case "EXPAND_CHECKOUT":
             return action.payload;
         case "COLLAPSE_CHECKOUT":
+            return action.payload;
+        case "EXPAND_ALGOLIA":
+            return action.payload;
+        case "COLLAPSE_ALGOLIA":
             return action.payload;
         case "COLLAPSE_ALL":
             return {...initialState};
