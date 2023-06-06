@@ -1,16 +1,14 @@
 import Grid from "@mui/material/Grid";
 import EndpointsCode from "../../../components/EndpointsCode";
 import Divider from "@mui/material/Divider";
-import Attribute from "../../../components/Attribute";
 import {jsonSyntaxHighlight} from "../../Users/utils";
-import Parameter from "../../../components/Parameter";
 import Code from "../../../components/Code";
 import {Comment, String, Token} from "../../../components/Keywords";
 import {useState} from "react";
-import {getPolicyParameters, getPolicyResponse} from "../data";
+import {getPolicyResponse} from "../data";
 const examplePublicKey = "pk_test_711375ef-6f43-4ff9-ab13-237bfe5550e2"
 const exampleAuthToken = "84db512cc9517bea10514bdc63c7fa3069c1c2da"
-const endpoint = "/v1/policies/refund-policy"
+const endpoint = "/v1/policies/privacy-policy"
 
 const GetPolicy = ({spacing}) => {
 
@@ -43,7 +41,7 @@ const GetPolicy = ({spacing}) => {
             )
         } else if (selectedLanguage === "cURL") {
             return (
-                <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/policies/refund-policy</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String></p>
+                <p style={{color: "#F5FBFF", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}><span style={{color: "#C1C9D2"}}>$</span> curl <Comment>api.oxinance.com/v1/policies/privacy-policy</Comment> -XPOST \ <br/> &nbsp;&nbsp;-H <String>&quot;project-public-key: <String>{examplePublicKey}</String>&quot;</String></p>
             )
         }
     }
