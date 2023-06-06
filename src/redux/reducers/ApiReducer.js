@@ -33,6 +33,10 @@ const ApiReducer = function (state = initialState, action) {
             return action.payload;
         case "COLLAPSE_ALGOLIA":
             return action.payload;
+        case "EXPAND_POLICIES":
+            return action.payload;
+        case "COLLAPSE_POLICIES":
+            return action.payload;
         case "COLLAPSE_ALL":
             return {...initialState};
         default: {

@@ -53,7 +53,7 @@ const GetProduct = forwardRef((props, ref) => {
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get product</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Retrieves the details of an existing product. Supply the unique product ID and Oxinance will return the corresponding product information.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                 <Divider/>
                 <p style={{fontSize: 12, color: "#A3ACB9"}}>No parameters</p>
                 <br/>

@@ -56,7 +56,7 @@ const UpdateCartItem = forwardRef((props, ref) => {
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Update cart item quantity</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Updates the <SyntaxText fontSize={12}>quantity</SyntaxText> of a specific <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord>.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                 <Divider/>
                 <p><SyntaxText>quantity</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}>integer</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>The amount of units the user wants to purchase from the Product linked to the price.</p>

@@ -57,7 +57,7 @@ const RegisterUser = forwardRef((props, ref) => {
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Register a user</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Register a user and returns user&apos;s authentication token which can be used to authenticate future requests.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                 <Divider/>
                 <p><SyntaxText>username</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}>string</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
                 <Divider/>

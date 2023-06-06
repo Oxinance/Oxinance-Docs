@@ -130,7 +130,27 @@ export const collapseAlgoliaAction = () => {
     }
 }
 
+export const expandPoliciesAction = () => {
+    return async (dispatch, getState) => {
+        const state = getState();
+        const payload = {...state.api, expandPolicies: true}
+        dispatch({
+            type: "EXPAND_POLICIES",
+            payload: payload
+        })
+    }
+}
 
+export const collapsePoliciesAction = () => {
+    return async (dispatch, getState) => {
+        const state = getState();
+        const payload = {...state.api, expandPolicies: false}
+        dispatch({
+            type: "COLLAPSE_POLICIES",
+            payload: payload
+        })
+    }
+}
 
 export const collapseAll = () => {
     return async (dispatch, getState) => {

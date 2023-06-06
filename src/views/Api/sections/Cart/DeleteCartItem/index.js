@@ -57,7 +57,7 @@ const DeleteCartItem = forwardRef((props, ref) => {
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Delete cart item</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>Deletes a <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord> and returns a <TipWord onClick={() => navigate("/api#cart-items/list-cart-items")}>list of Cart Items</TipWord> belonging to the logged-in user.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                 <Divider/>
                 <p style={{fontSize: 12, color: "#A3ACB9"}}>No parameters</p>
                 <br/>

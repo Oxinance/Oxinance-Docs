@@ -55,7 +55,7 @@ const GetOrders = forwardRef((props, ref) => {
                 <p style={{color: "#2A2F45", fontWeight: 500, fontSize: 24, marginBottom: 10}}>Get orders</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>lists all user orders.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                 <Divider/>
                 <p style={{fontSize: 12, color: "#A3ACB9"}}>No parameters</p>
                 <br/>

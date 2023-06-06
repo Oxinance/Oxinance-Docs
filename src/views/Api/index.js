@@ -12,11 +12,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     collapseAll, expandAlgoliaAction,
     expandCartItemsAction, expandCheckoutAction,
-    expandOrdersAction,
+    expandOrdersAction, expandPoliciesAction,
     expandProductsAction,
     expandUsersAction
 } from "../../redux/actions/ApiActions";
 import Algolia from "./sections/Algolia";
+import Policies from "./sections/Policies";
 
 const Api = () => {
 
@@ -300,6 +301,20 @@ const Api = () => {
                         registerComponent.scrollIntoView();
                     }, 500)
                 }
+                break
+            case "#policies/get-policy":
+                if (apiState.expandPolicies) {
+                    const registerComponent = document.getElementById("api-policies-get");
+                    registerComponent.scrollIntoView();
+                } else {
+                    dispatch(expandPoliciesAction());
+                    setTimeout(() => {
+                        const registerComponent = document.getElementById("api-policies-get");
+                        registerComponent.scrollIntoView();
+                    }, 500)
+                }
+                break
+            return;
         }
     }, [location])
 
@@ -315,9 +330,14 @@ const Api = () => {
             <div id={"cart-items"}>
                 <Cart spacing={spacing}/>
             </div>
-            <Checkout spacing={spacing}/>
+            <div id={"checkouts"}>
+                <Checkout spacing={spacing}/>
+            </div>
             <div id={"algolia"}>
                 <Algolia spacing={spacing}/>
+            </div>
+            <div id={"policies"}>
+                <Policies spacing={spacing}/>
             </div>
         </DashboardLayout>
     )

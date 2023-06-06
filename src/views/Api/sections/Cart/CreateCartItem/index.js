@@ -58,7 +58,7 @@ const CreateCartItem = forwardRef((props, ref) => {
                 <p style={{fontSize: 14, color: "#4F566B"}}>Creates a Cart Item with the specified <SyntaxText fontSize={12}>price_id</SyntaxText> and <SyntaxText fontSize={12}>quantity</SyntaxText>.</p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>If the user already possesses a <TipWord onClick={() => navigate("/api#cart-items")}>Cart Item</TipWord> with the specified <SyntaxText fontSize={12}>price_id</SyntaxText>, the API will sum the <SyntaxText fontSize={12}>quantity</SyntaxText> of both <TipWord onClick={() => navigate("/api#cart-items")}>Cart Items</TipWord> and return the older one.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                 <Divider/>
                 <p><SyntaxText>price_id</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}>string</span> <span style={{fontSize: 10, color: "#E56F4A"}}>REQUIRED</span></p>
                 <p style={{fontSize: 14, color: "#4F566B"}}>The Price ID belonging to the Product the user wants to buy, if the user already possesses a Cart Item with the specified <SyntaxText fontSize={12}>price_id</SyntaxText>, the API will sum the <SyntaxText fontSize={12}>quantity</SyntaxText> of both Cart Items and return the older one.</p>

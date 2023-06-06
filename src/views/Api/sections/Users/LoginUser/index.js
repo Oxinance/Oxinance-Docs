@@ -59,7 +59,7 @@ const LoginUser = forwardRef((props, ref) => {
                 <br/>
                 <p style={{fontSize: 12, color: "#4F566B"}}>Every time a user logs in successfully his <SyntaxText fontSize={12}>last_login</SyntaxText> property is updated.</p>
                 <br/>
-                <p style={{fontSize: 16, color: "#4F566B"}}>Parameters</p>
+                <p style={{fontSize: 16, color: "#4F566B"}}>Request Parameters</p>
                     <Divider/>
                     <p><SyntaxText>username</SyntaxText> <span style={{color: "#3C4257", fontWeight: "bold", fontFamily: "JetBrainsMono-Medium", fontSize: 13}}>string</span></p>
                     <p style={{fontSize: 14, color: "#4F566B"}}>Username to perform login.</p>

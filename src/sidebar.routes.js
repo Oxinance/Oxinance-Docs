@@ -3,6 +3,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import SellIcon from '@mui/icons-material/Sell';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Algolia from "./examples/Icons/Algolia";
+import Document from "./examples/Icons/Document";
 
 const sidebarRoutes = [
     {
@@ -152,6 +153,19 @@ const sidebarRoutes = [
                 name: "Search",
                 key: "search",
                 route: "/api#algolia/search"
+            },
+        ]
+    },
+    {
+        type: "collapse",
+        name: "Policies",
+        key: "policies",
+        icon: <Document size="16px" />,
+        collapse: [
+            {
+                name: "Get Policy",
+                key: "get-policy",
+                route: "/api#policies/get-policy"
             },
         ]
     },
